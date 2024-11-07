@@ -1,0 +1,7 @@
+- Google English- Hinglish code switched dataset: https://github.com/google-research-datasets/hinglish-top-dataset
+- multiple datasets/languages: https://aclanthology.org/2023.findings-acl.185.pdf
+- https://ritual.uh.edu/lince/datasets -> Spanglish
+
+
+
+CanVEC dataset contacted, paper: https://www.tandfonline.com/doi/epdf/10.1080/14790718.2023.2224013?needAccess=true

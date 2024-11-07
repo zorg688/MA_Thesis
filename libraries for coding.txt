@@ -1,0 +1,3 @@
+- pytorch
+- opennmt-py
+- subwort bpe: https://github.com/rsennrich/subword-nmt

@@ -1,0 +1,6 @@
+paper 2: Hinglish-English - MT -> researcher contacted regarding dataset, no answer yet
+paper 3: Denglish-English - MT necessary -> 72,801 sentences total
+paper 4: Spanglish-English - natural translated -> evaluation externally, no gold labels -> 15,000 training, 6,500 test, total 21,500 sentences
+paper 5: Frenglish-English, Spanglish-English - MT translated -> requested data from researchers -> no data but access to code for generation of code-switched input
+paper 8: Hinglish-English - natural translated -> 6,097 sentences total
+paper 9 and GitHub: Hinglish-English - MT necessary -> 31,756 training, 6,279 validation, 6,420 test, 44,453 total sentences
