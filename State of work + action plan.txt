@@ -1,0 +1,10 @@
+Process: 
+- create machine translated data
+- Find multilingual Opus model(s) that perform well for translation tasks
+- test performance change when using  code switched data vs not code-switched
+- test performance change when using machine translated data
+- choose 1-2 best models/ most robust models
+- perform systematic knowledge distillation processes
+- analyse performance and log performance development for different knowledge distillation processes and try to find a regularity
+- check which model is more robust and whether this has any effect 
+- write thesis
