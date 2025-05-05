@@ -8,3 +8,7 @@ Process:
 - analyse performance and log performance development for different knowledge distillation processes and try to find a regularity
 - check which model is more robust and whether this has any effect 
 - write thesis
+
+
+
+Puhti Project: 2011987

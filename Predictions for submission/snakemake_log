@@ -1,0 +1,710 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 8
+Provided resources: gpu=1
+Job stats:
+job                                    count
+-----------------------------------  -------
+add_lang_tag_corpus_src                    2
+add_lang_tag_corpus_src_for_student        2
+add_lang_tag_devset_for_student            2
+alignments                                 1
+all                                        1
+ce_filter                                  2
+collect_corpus                             2
+collect_mono_src_dummy                     2
+compile_preprocess                         1
+download_corpus                            6
+download_opusmt_backward                   2
+download_teacher_models                    2
+eval_quantized                             2
+evaluate                                   4
+experiment                                 1
+export                                     1
+extract_lex                                1
+fast_align                                 1
+finetune_student                           1
+marian                                     2
+merge_corpus                               1
+merge_corpus_langpair                      2
+merge_devset_for_student                   1
+merge_devset_langpair                      2
+merge_filtered                             1
+merge_translated                           2
+mono_src_dummy                             2
+opusmt_preprocess_for_scoring              2
+quantize                                   1
+run_opusfilter                             2
+score                                      2
+split_corpus                               2
+train_student                              1
+train_vocab                                1
+total                                     60
+
+Select jobs to execute...
+
+[Thu Jan 30 11:18:14 2025]
+Job 51: Saving experiment metadata
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/experiments/test/fiu-eng/config.yml
+
+[Thu Jan 30 11:18:14 2025]
+Job 20: Collecting translated mono src dataset (dummy rule, used in case where no mono src datasets)
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/mono.0.target.gz
+
+touch /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/mono.0.target.gz  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/collect_mono_src.et-en.0.log 2>&1
+Submitted job 20 with external jobid '26149569'.
+
+[Thu Jan 30 11:18:14 2025]
+Job 14: Downloading parallel corpus
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/corpus/opus_ELRC_2922__v1.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/corpus/opus_ELRC_2922__v1.target.gz
+
+bash pipeline/data/download-corpus.sh "opus_ELRC_2922__v1" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/corpus/opus_ELRC_2922__v1" "et" "en"  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/download_corpus/corpus/opus_ELRC_2922__v1_et-en.log 2>&1
+Submitted job 14 with external jobid '26149570'.
+
+[Thu Jan 30 11:18:15 2025]
+Job 41: Compiling fast align
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/bin/extract_lex
+
+bash pipeline/setup/compile-extract-lex.sh /scratch/project_2011987/OpusDistillery/3rd_party/extract-lex/build 4 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/compile-extract-lex.log 2>&1
+Submitted job 41 with external jobid '26149571'.
+
+[Thu Jan 30 11:18:15 2025]
+Job 54: Downloading parallel corpus
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/eval/flores_devtest.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/eval/flores_devtest.target.gz
+
+bash pipeline/data/download-corpus.sh "flores_devtest" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/eval/flores_devtest" "fi" "en"  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/download_corpus/eval/flores_devtest_fi-en.log 2>&1
+Submitted job 54 with external jobid '26149572'.
+
+[Thu Jan 30 11:18:15 2025]
+Job 21: Downloading OPUS-MT backward model et-en
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/backward/vocab.yml, /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/backward/final.model.npz.best-perplexity.npz
+
+bash pipeline/opusmt/download-model.sh                     "https://object.pouta.csc.fi/Tatoeba-MT-models/eng-fiu/opus2m-2020-08-01.zip" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/backward" "final.model.npz.best-perplexity.npz" eng est >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/download_backward_et-en.log 2>&1
+Submitted job 21 with external jobid '26149573'.
+
+[Thu Jan 30 11:18:17 2025]
+Job 34: Collecting translated mono src dataset (dummy rule, used in case where no mono src datasets)
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/mono.0.target.gz
+
+touch /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/mono.0.target.gz  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/collect_mono_src.fi-en.0.log 2>&1
+Submitted job 34 with external jobid '26149574'.
+
+[Thu Jan 30 11:18:17 2025]
+Job 15: Compiling preprocess
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/bin/dedupe
+
+bash pipeline/setup/compile-preprocess.sh /scratch/project_2011987/OpusDistillery/3rd_party/preprocess/build 4  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/compile-preprocess.log 2>&1
+Submitted job 15 with external jobid '26149575'.
+[Thu Jan 30 11:18:17 2025]
+Finished job 51.
+1 of 60 steps (2%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:18:17 2025]
+Job 46: Downloading parallel corpus
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset/flores_dev.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset/flores_dev.source.gz
+
+bash pipeline/data/download-corpus.sh "flores_dev" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset/flores_dev" "et" "en"  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/download_corpus/devset/flores_dev_et-en.log 2>&1
+Submitted job 46 with external jobid '26149576'.
+[Thu Jan 30 11:23:27 2025]
+Finished job 20.
+2 of 60 steps (3%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:23:27 2025]
+Job 53: Downloading parallel corpus
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/eval/flores_devtest.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/eval/flores_devtest.source.gz
+
+bash pipeline/data/download-corpus.sh "flores_devtest" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/eval/flores_devtest" "et" "en"  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/download_corpus/eval/flores_devtest_et-en.log 2>&1
+Submitted job 53 with external jobid '26149722'.
+[Thu Jan 30 11:23:30 2025]
+Finished job 14.
+3 of 60 steps (5%) done
+Write-protecting output file /scratch/project_2011987/OpusDistillery/bin/extract_lex.
+[Thu Jan 30 11:23:30 2025]
+Finished job 41.
+4 of 60 steps (7%) done
+[Thu Jan 30 11:23:30 2025]
+Finished job 54.
+5 of 60 steps (8%) done
+[Thu Jan 30 11:23:30 2025]
+Finished job 21.
+6 of 60 steps (10%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:23:30 2025]
+Job 35: Downloading OPUS-MT backward model fi-en
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/backward/final.model.npz.best-perplexity.npz, /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/backward/vocab.yml
+
+bash pipeline/opusmt/download-model.sh                     "https://object.pouta.csc.fi/Tatoeba-MT-models/eng-fiu/opus2m-2020-08-01.zip" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/backward" "final.model.npz.best-perplexity.npz" eng fin >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/download_backward_fi-en.log 2>&1
+Submitted job 35 with external jobid '26149723'.
+
+[Thu Jan 30 11:23:30 2025]
+Job 13: Cleaning dataset with opusfilter
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus/opus_ELRC_2922__v1.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus/opus_ELRC_2922__v1.target.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/corpus/opus_ELRC_2922__v1.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/corpus/opus_ELRC_2922__v1.target.gz
+
+python pipeline/clean/run-opusfilter.py "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/corpus/opus_ELRC_2922__v1.source.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/corpus/opus_ELRC_2922__v1.target.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus/opus_ELRC_2922__v1.source.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus/opus_ELRC_2922__v1.target.gz" "et" "en"                 "default" 8 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/opusfilter/opus_ELRC_2922__v1_et-en.log 2>&1
+Submitted job 13 with external jobid '26149724'.
+
+[Thu Jan 30 11:23:30 2025]
+Job 49: Downloading parallel corpus
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset/flores_dev.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset/flores_dev.source.gz
+
+bash pipeline/data/download-corpus.sh "flores_dev" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset/flores_dev" "fi" "en"  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/download_corpus/devset/flores_dev_fi-en.log 2>&1
+Submitted job 49 with external jobid '26149725'.
+
+[Thu Jan 30 11:23:31 2025]
+Job 17: Creating mono src dataset (dummy rule, used in case where no mono src datasets)
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/clean/et-en/mono.source.gz
+
+touch /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/clean/et-en/mono.source.gz >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/create_mono_src.et-en.log 2>&1
+Submitted job 17 with external jobid '26149726'.
+[Thu Jan 30 11:23:32 2025]
+Finished job 34.
+7 of 60 steps (12%) done
+[Thu Jan 30 11:23:32 2025]
+Finished job 15.
+8 of 60 steps (13%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:23:32 2025]
+Job 16: Downloading OPUS-MT teacher model for et-en
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/teacher-base0-0
+
+bash pipeline/opusmt/download-model.sh                         "https://object.pouta.csc.fi/Tatoeba-MT-models/fiu-eng/opus4m-2020-08-12.zip" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/teacher-base0-0" "final.model.npz.best-perplexity.npz" est eng >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/download_teacher_0-0_et-en.log 2>&1
+Submitted job 16 with external jobid '26149727'.
+
+[Thu Jan 30 11:23:32 2025]
+Job 29: Downloading parallel corpus
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/corpus/opus_ELRC_2922__v1.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/corpus/opus_ELRC_2922__v1.source.gz
+
+bash pipeline/data/download-corpus.sh "opus_ELRC_2922__v1" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/corpus/opus_ELRC_2922__v1" "fi" "en"  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/download_corpus/corpus/opus_ELRC_2922__v1_fi-en.log 2>&1
+Submitted job 29 with external jobid '26149728'.
+Select jobs to execute...
+[Thu Jan 30 11:23:33 2025]
+Finished job 46.
+9 of 60 steps (15%) done
+
+[Thu Jan 30 11:23:33 2025]
+Job 45: Merging devsets per langpair
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset.source.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/bin/dedupe, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset/flores_dev.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset/flores_dev.source.gz
+
+bash pipeline/clean/merge-corpus.sh "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset" inf /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset/flores_dev >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/merge_devset_et-en.log 2>&1
+Submitted job 45 with external jobid '26149729'.
+[Thu Jan 30 11:27:26 2025]
+Finished job 53.
+10 of 60 steps (17%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:27:26 2025]
+Job 30: Downloading OPUS-MT teacher model for fi-en
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/teacher-base0-0
+
+bash pipeline/opusmt/download-model.sh                         "https://object.pouta.csc.fi/Tatoeba-MT-models/fiu-eng/opus4m-2020-08-12.zip" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/teacher-base0-0" "final.model.npz.best-perplexity.npz" fin eng >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/download_teacher_0-0_fi-en.log 2>&1
+Submitted job 30 with external jobid '26149787'.
+[Thu Jan 30 11:27:29 2025]
+Finished job 49.
+11 of 60 steps (18%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:27:29 2025]
+Job 48: Merging devsets per langpair
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset.source.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/bin/dedupe, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset/flores_dev.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset/flores_dev.target.gz
+
+bash pipeline/clean/merge-corpus.sh "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset" inf /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset/flores_dev >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/merge_devset_fi-en.log 2>&1
+Submitted job 48 with external jobid '26149788'.
+[Thu Jan 30 11:27:30 2025]
+Finished job 17.
+12 of 60 steps (20%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:27:30 2025]
+Job 31: Creating mono src dataset (dummy rule, used in case where no mono src datasets)
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/clean/fi-en/mono.source.gz
+
+touch /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/clean/fi-en/mono.source.gz >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/create_mono_src.fi-en.log 2>&1
+Submitted job 31 with external jobid '26149789'.
+[Thu Jan 30 11:27:31 2025]
+Finished job 16.
+13 of 60 steps (22%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:27:31 2025]
+Job 40: Compiling fast align
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/bin/atools, /scratch/project_2011987/OpusDistillery/bin/fast_align
+
+bash pipeline/setup/compile-fast-align.sh /scratch/project_2011987/OpusDistillery/3rd_party/fast_align/build 4  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/compile-fast-align.log 2>&1
+Submitted job 40 with external jobid '26149790'.
+[Thu Jan 30 11:27:32 2025]
+Finished job 29.
+14 of 60 steps (23%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:27:32 2025]
+Job 28: Cleaning dataset with opusfilter
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus/opus_ELRC_2922__v1.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus/opus_ELRC_2922__v1.target.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/corpus/opus_ELRC_2922__v1.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/corpus/opus_ELRC_2922__v1.source.gz
+
+python pipeline/clean/run-opusfilter.py "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/corpus/opus_ELRC_2922__v1.source.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/corpus/opus_ELRC_2922__v1.target.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus/opus_ELRC_2922__v1.source.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus/opus_ELRC_2922__v1.target.gz" "fi" "en"                 "default" 8 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/opusfilter/opus_ELRC_2922__v1_fi-en.log 2>&1
+Submitted job 28 with external jobid '26149792'.
+[Thu Jan 30 11:27:48 2025]
+Finished job 35.
+15 of 60 steps (25%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:27:48 2025]
+Job 3: Compiling marian
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/3rd_party/browsermt-marian-dev/build/marian-decoder, /scratch/project_2011987/OpusDistillery/3rd_party/browsermt-marian-dev/build/marian-conv
+
+bash pipeline/setup/compile-browsermt-marian-dev.sh /scratch/project_2011987/OpusDistillery/3rd_party/browsermt-marian-dev/build 8  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/compile-browsermt-marian-dev.log 2>&1
+Submitted job 3 with external jobid '26149796'.
+[Thu Jan 30 11:27:49 2025]
+Finished job 13.
+16 of 60 steps (27%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:27:49 2025]
+Job 12: Merging clean parallel datasets per langpair
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.target.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/bin/dedupe, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus/opus_ELRC_2922__v1.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus/opus_ELRC_2922__v1.source.gz
+
+bash pipeline/clean/merge-corpus.sh "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus" 1000 /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus/opus_ELRC_2922__v1 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/merge_corpus_et-en.log 2>&1
+Submitted job 12 with external jobid '26149797'.
+[Thu Jan 30 11:27:50 2025]
+Finished job 45.
+17 of 60 steps (28%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:27:50 2025]
+Job 44: Adding language tag id for devset for student training
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset.student.source.langtagged.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset.source.gz
+
+bash pipeline/clean/add-lang-tag.sh "eng" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset" "False"  "student.source"  "" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/add_langid_devset_et-en_student.log 2>&1
+Submitted job 44 with external jobid '26149798'.
+[Thu Jan 30 11:32:38 2025]
+Finished job 48.
+18 of 60 steps (30%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:32:38 2025]
+Job 47: Adding language tag id for devset for student training
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset.student.source.langtagged.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset.source.gz
+
+bash pipeline/clean/add-lang-tag.sh "eng" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset" "False"  "student.source"  "" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/add_langid_devset_fi-en_student.log 2>&1
+Submitted job 47 with external jobid '26149853'.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/bin/fast_align.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/bin/atools.
+[Thu Jan 30 11:32:40 2025]
+Finished job 40.
+19 of 60 steps (32%) done
+Select jobs to execute...
+[Thu Jan 30 11:32:55 2025]
+Finished job 30.
+20 of 60 steps (33%) done
+[Thu Jan 30 11:32:56 2025]
+Finished job 31.
+21 of 60 steps (35%) done
+[Thu Jan 30 11:32:57 2025]
+Finished job 28.
+22 of 60 steps (37%) done
+
+[Thu Jan 30 11:32:57 2025]
+Job 27: Merging clean parallel datasets per langpair
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.source.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/bin/dedupe, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus/opus_ELRC_2922__v1.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus/opus_ELRC_2922__v1.target.gz
+
+bash pipeline/clean/merge-corpus.sh "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus" 1000 /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus/opus_ELRC_2922__v1 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/merge_corpus_fi-en.log 2>&1
+Submitted job 27 with external jobid '26149858'.
+[Thu Jan 30 11:33:11 2025]
+Finished job 12.
+23 of 60 steps (38%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:33:11 2025]
+Job 11: Adding language tag id for corpus translation
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.source.langtagged.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/teacher-base0-0
+
+bash pipeline/clean/add-lang-tag.sh "eng" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus" "False" "source" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/teacher-base0-0" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/add_langid_corpus_et-en.log 2>&1
+Submitted job 11 with external jobid '26149861'.
+[Thu Jan 30 11:33:12 2025]
+Finished job 44.
+24 of 60 steps (40%) done
+Select jobs to execute...
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/browsermt-marian-dev/build/marian.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/browsermt-marian-dev/build/marian-decoder.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/browsermt-marian-dev/build/marian-scorer.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/browsermt-marian-dev/build/marian-conv.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/browsermt-marian-dev/build/spm_train.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/browsermt-marian-dev/build/spm_encode.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/browsermt-marian-dev/build/spm_export_vocab.
+[Thu Jan 30 11:33:25 2025]
+Finished job 3.
+25 of 60 steps (42%) done
+
+[Thu Jan 30 11:33:25 2025]
+Job 5: Compiling marian
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_encode, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian-scorer, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_train, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_export_vocab, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian-decoder
+
+bash pipeline/setup/compile-marian-dev.sh /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build 8  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/compile-marian-dev.log 2>&1
+Submitted job 5 with external jobid '26149864'.
+[Thu Jan 30 11:37:32 2025]
+Finished job 11.
+26 of 60 steps (43%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:37:32 2025]
+Job 19: Splitting the corpus to translate
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.source.langtagged.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.target.gz
+DAG of jobs will be updated after completion.
+
+bash pipeline/translate/split-corpus.sh                 /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.source.langtagged.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.target.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus 10000 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/split_corpus_et-en.log 2>&1
+Submitted job 19 with external jobid '26149903'.
+[Thu Jan 30 11:37:33 2025]
+Finished job 27.
+27 of 60 steps (45%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:37:33 2025]
+Job 26: Adding language tag id for corpus translation
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.source.langtagged.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/teacher-base0-0, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.source.gz
+
+bash pipeline/clean/add-lang-tag.sh "eng" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus" "False" "source" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/teacher-base0-0" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/add_langid_corpus_fi-en.log 2>&1
+Submitted job 26 with external jobid '26149904'.
+[Thu Jan 30 11:38:27 2025]
+Finished job 47.
+28 of 60 steps (47%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:38:27 2025]
+Job 43: Merging clean parallel datasets
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/devset.student.source.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset.student.source.langtagged.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/fi-en/devset.student.source.langtagged.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/et-en/devset.target.gz, /scratch/project_2011987/OpusDistillery/bin/dedupe
+
+cat $(echo /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/*/devset.student.source.langtagged.gz | tr ' ' '
+' | tr '
+' ' ') > "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/devset.student.source.gz"
+    cat $(echo /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/*/devset.target.gz | tr ' ' '
+' | tr '
+' ' ') > "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/original/devset.student.target.gz" 
+Submitted job 43 with external jobid '26149929'.
+[Thu Jan 30 11:39:57 2025]
+Finished job 43.
+29 of 60 steps (48%) done
+[Thu Jan 30 11:39:58 2025]
+Finished job 19.
+30 of 60 steps (50%) done
+[Thu Jan 30 11:40:10 2025]
+Finished job 26.
+31 of 64 steps (48%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:40:10 2025]
+Job 39: Merging clean parallel datasets
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/corpus.target.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/bin/dedupe, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.source.langtagged.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.source.langtagged.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.target.gz
+
+
+    if ls /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/*/corpus.source.langtagged.gz 1> /dev/null 2>&1; then
+        cat $(echo /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/*/corpus.source.langtagged.gz | tr ' ' '
+' | tr '
+' ' ') > "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/corpus.source.gz"
+    else
+        cat $(echo /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/*/corpus.source.gz | tr ' ' '
+' | tr '
+' ' ') > "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/corpus.source.gz"
+    fi
+    cat $(echo /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/*/corpus.target.gz | tr ' ' '
+' | tr '
+' ' ') > "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/corpus.target.gz"
+    
+Submitted job 39 with external jobid '26149951'.
+
+[Thu Jan 30 11:40:11 2025]
+Job 33: Splitting the corpus to translate
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.source.langtagged.gz
+DAG of jobs will be updated after completion.
+
+bash pipeline/translate/split-corpus.sh                 /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.source.langtagged.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.target.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus 10000 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/split_corpus_fi-en.log 2>&1
+Submitted job 33 with external jobid '26149952'.
+[Thu Jan 30 11:44:26 2025]
+Finished job 33.
+32 of 64 steps (50%) done
+[Thu Jan 30 11:44:48 2025]
+Finished job 39.
+33 of 68 steps (49%) done
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian-decoder.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian-scorer.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian-conv.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_train.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_encode.
+Write-protecting output file /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_export_vocab.
+[Thu Jan 30 11:55:19 2025]
+Finished job 5.
+34 of 68 steps (50%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:55:19 2025]
+Job 38: Training spm vocab
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/vocab/vocab.spm; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/corpus.target.gz, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_train, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/corpus.source.gz
+
+bash pipeline/train/spm-vocab.sh "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/corpus.source.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/corpus.target.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/vocab/vocab.spm"                 "eng eng" "False" 400 2 "3000" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/train_vocab.log 2>&1
+Submitted job 38 with external jobid '26150485'.
+
+[Thu Jan 30 11:55:22 2025]
+Job 66: Preprocessing source file for OPUS-MT model
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt
+
+bash pipeline/translate/opusmt-preprocess.sh                     /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00 /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/teacher-base0-0/final.model.npz.best-perplexity.npz "source.spm" /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_encode False "" "" 0 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/opusmt_preprocess_corpus/et-en/corpus.00.0.log 2>&1
+Submitted job 66 with external jobid '26150486'.
+
+[Thu Jan 30 11:55:23 2025]
+Job 72: Preprocessing source file for OPUS-MT model
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt
+
+bash pipeline/translate/opusmt-preprocess.sh                     /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00 /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/teacher-base0-0/final.model.npz.best-perplexity.npz "source.spm" /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_encode False "" "" 0 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/opusmt_preprocess_corpus/fi-en/corpus.00.0.log 2>&1
+Submitted job 72 with external jobid '26150487'.
+[Thu Jan 30 11:57:32 2025]
+Finished job 66.
+35 of 68 steps (51%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:57:32 2025]
+Job 65: Translating corpus with teacher
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt.nbest; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian-decoder
+
+bash pipeline/translate/translate-nbest.sh                     "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt.nbest" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/teacher-base0-0/final.model.npz.best-perplexity.npz"  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/translate_corpus/et-en/00.0.log 2>&1
+Submitted job 65 with external jobid '26150504'.
+[Thu Jan 30 11:57:34 2025]
+Finished job 72.
+36 of 68 steps (53%) done
+Select jobs to execute...
+[Thu Jan 30 11:57:54 2025]
+Finished job 38.
+37 of 68 steps (54%) done
+[Thu Jan 30 11:58:36 2025]
+Finished job 65.
+38 of 68 steps (56%) done
+
+[Thu Jan 30 11:58:36 2025]
+Job 71: Translating corpus with teacher
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt.nbest; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian-decoder
+
+bash pipeline/translate/translate-nbest.sh                     "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt.nbest" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/teacher-base0-0/final.model.npz.best-perplexity.npz"  >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/translate_corpus/fi-en/00.0.log 2>&1
+Submitted job 71 with external jobid '26150610'.
+
+[Thu Jan 30 11:58:37 2025]
+Job 64: Desegmenting OPUS-MT model nbest list
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt.nbest.deseg; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt.nbest
+
+Submitted job 64 with external jobid '26150611'.
+[Thu Jan 30 11:58:57 2025]
+Finished job 71.
+39 of 68 steps (57%) done
+Select jobs to execute...
+
+[Thu Jan 30 11:58:57 2025]
+Job 70: Desegmenting OPUS-MT model nbest list
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt.nbest.deseg; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt.nbest
+
+Submitted job 70 with external jobid '26150614'.
+[Thu Jan 30 12:03:03 2025]
+Finished job 70.
+40 of 68 steps (59%) done
+Select jobs to execute...
+
+[Thu Jan 30 12:03:03 2025]
+Job 69: Extracting best translations for the corpus
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.nbest.0.out; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt.nbest.deseg
+
+python pipeline/translate/bestbleu.py -i /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt.nbest.deseg -r /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.ref -m bleu -o /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.nbest.0.out >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/extract_best/fi-en/00.0.log 2>&1
+Submitted job 69 with external jobid '26150635'.
+[Thu Jan 30 12:03:04 2025]
+Finished job 64.
+41 of 68 steps (60%) done
+Select jobs to execute...
+
+[Thu Jan 30 12:03:04 2025]
+Job 63: Extracting best translations for the corpus
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.nbest.0.out; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt.nbest.deseg
+
+python pipeline/translate/bestbleu.py -i /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt.nbest.deseg -r /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.ref -m bleu -o /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.nbest.0.out >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/extract_best/et-en/00.0.log 2>&1
+Submitted job 63 with external jobid '26150636'.
+[Thu Jan 30 12:08:04 2025]
+Finished job 69.
+42 of 68 steps (62%) done
+Removing temporary output /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.0.opusmt.nbest.deseg.
+Select jobs to execute...
+
+[Thu Jan 30 12:08:04 2025]
+Job 32: Collecting translated corpus
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus.0.target.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus/file.00.nbest.0.out
+
+bash pipeline/translate/collect.sh /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus.0.target.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.source.langtagged.gz 0 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/collect_corpus_fi-en_0.log 2>&1
+Submitted job 32 with external jobid '26150688'.
+[Thu Jan 30 12:08:06 2025]
+Finished job 63.
+43 of 68 steps (63%) done
+Removing temporary output /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.0.opusmt.nbest.deseg.
+Select jobs to execute...
+
+[Thu Jan 30 12:08:06 2025]
+Job 18: Collecting translated corpus
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus.0.target.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus/file.00.nbest.0.out
+
+bash pipeline/translate/collect.sh /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus.0.target.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.source.langtagged.gz 0 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/collect_corpus_et-en_0.log 2>&1
+Submitted job 18 with external jobid '26150689'.
+[Thu Jan 30 12:13:06 2025]
+Finished job 32.
+44 of 68 steps (65%) done
+Select jobs to execute...
+
+[Thu Jan 30 12:13:06 2025]
+Job 25: Merging translated datasets
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.source.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/bin/dedupe, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.source.langtagged.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/clean/fi-en/mono.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/mono.0.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus.0.target.gz
+
+bash pipeline/translate/merge-corpus.sh                 "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/fi-en/corpus.source.langtagged.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/clean/fi-en/mono.source.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/corpus.model_index.target.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/fi-en/mono.model_index.target.gz"                 "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.source.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.target.gz" False 0 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/fi-en/merge_translated.log 2>&1
+Submitted job 25 with external jobid '26150722'.
+[Thu Jan 30 12:13:39 2025]
+Finished job 18.
+45 of 68 steps (66%) done
+Select jobs to execute...
+
+[Thu Jan 30 12:13:39 2025]
+Job 10: Merging translated datasets
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.source.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/bin/dedupe, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.source.langtagged.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus.0.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/clean/et-en/mono.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/mono.0.target.gz
+
+bash pipeline/translate/merge-corpus.sh                 "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/opusfilter/et-en/corpus.source.langtagged.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/clean/et-en/mono.source.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/corpus.model_index.target.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/translated/et-en/mono.model_index.target.gz"                 "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.source.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.target.gz" False 0 >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/et-en/merge_translated.log 2>&1
+Submitted job 10 with external jobid '26150730'.
+[Thu Jan 30 12:18:29 2025]
+Finished job 10.
+46 of 68 steps (68%) done
+Select jobs to execute...
+
+[Thu Jan 30 12:18:29 2025]
+Job 9: Preprocessing source file for OPUS-MT model
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.source.opusmt.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.target.opusmt.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_encode, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/backward/final.model.npz.best-perplexity.npz
+
+bash pipeline/translate/opusmt-preprocess.sh               /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.source.gz /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/backward/final.model.npz.best-perplexity.npz "target.spm" /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_encode False "" "" && \ 
+              bash pipeline/translate/opusmt-preprocess.sh               /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.target.gz /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/backward/final.model.npz.best-perplexity.npz "source.spm" /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_encode "" est True >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/opusmt_preprocess_corpus/et-en/preprocess_for_scoring.log 2>&1
+Submitted job 9 with external jobid '26150906'.
+[Thu Jan 30 12:19:14 2025]
+Finished job 25.
+47 of 68 steps (69%) done
+Select jobs to execute...
+
+[Thu Jan 30 12:19:14 2025]
+Job 24: Preprocessing source file for OPUS-MT model
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.target.opusmt.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.source.opusmt.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/backward/final.model.npz.best-perplexity.npz, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_encode, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.source.gz
+
+bash pipeline/translate/opusmt-preprocess.sh               /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.source.gz /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/backward/final.model.npz.best-perplexity.npz "target.spm" /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_encode False "" "" && \ 
+              bash pipeline/translate/opusmt-preprocess.sh               /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.target.gz /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/backward/final.model.npz.best-perplexity.npz "source.spm" /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/spm_encode "" fin True >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/opusmt_preprocess_corpus/fi-en/preprocess_for_scoring.log 2>&1
+Submitted job 24 with external jobid '26150911'.
+[Thu Jan 30 12:24:05 2025]
+Finished job 24.
+48 of 68 steps (71%) done
+Select jobs to execute...
+
+[Thu Jan 30 12:24:05 2025]
+Job 36: Scoring
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/scores.txt; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/backward/final.model.npz.best-perplexity.npz, /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/backward/vocab.yml, /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian-scorer, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.target.opusmt.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.source.opusmt.gz
+
+bash pipeline/cefilter/score.sh                 "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/backward/final.model.npz.best-perplexity.npz" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/fi-en/backward/vocab.yml" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.source.opusmt.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.target.opusmt.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/scores.txt" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/score_fi-en.log 2>&1
+Submitted job 36 with external jobid '26150980'.
+[Thu Jan 30 12:24:16 2025]
+Finished job 9.
+49 of 68 steps (72%) done
+Select jobs to execute...
+[Thu Jan 30 12:25:07 2025]
+Finished job 36.
+50 of 68 steps (74%) done
+
+[Thu Jan 30 12:25:07 2025]
+Job 22: Scoring
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/scores.txt; Input files updated by another job: /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build/marian-scorer, /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/backward/vocab.yml, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.target.opusmt.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.source.opusmt.gz, /scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/backward/final.model.npz.best-perplexity.npz
+
+bash pipeline/cefilter/score.sh                 "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/backward/final.model.npz.best-perplexity.npz" "/scratch/project_2011987/OpusDistillery/rules/../data/models/test/fiu-eng/et-en/backward/vocab.yml" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.source.opusmt.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.target.opusmt.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/scores.txt" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/score_et-en.log 2>&1
+Submitted job 22 with external jobid '26150987'.
+
+[Thu Jan 30 12:25:08 2025]
+Job 23: Cross entropy filtering
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.source.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.target.opusmt.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/scores.txt, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus.source.opusmt.gz
+
+bash pipeline/cefilter/ce-filter.sh                 "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/fi-en/corpus" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/scores.txt" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/ce_filter_fi-en.log 2>&1
+Submitted job 23 with external jobid '26150988'.
+[Thu Jan 30 12:25:29 2025]
+Finished job 22.
+51 of 68 steps (75%) done
+Select jobs to execute...
+
+[Thu Jan 30 12:25:29 2025]
+Job 8: Cross entropy filtering
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.target.opusmt.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus.source.opusmt.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/scores.txt
+
+bash pipeline/cefilter/ce-filter.sh                 "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/merged/et-en/corpus" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/scores.txt" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/ce_filter_et-en.log 2>&1
+Submitted job 8 with external jobid '26150993'.
+[Thu Jan 30 12:30:19 2025]
+Finished job 8.
+52 of 68 steps (76%) done
+[Thu Jan 30 12:30:20 2025]
+Finished job 23.
+53 of 68 steps (78%) done
+Select jobs to execute...
+
+[Thu Jan 30 12:30:20 2025]
+Job 37: Adding language tag id for student training
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.source.langtagged.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz
+
+
+        bash pipeline/clean/add-lang-tag.sh "eng" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus" "False" "source" "" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/add_langid_corpus_fi-en_student.log 2>&1
+        if [ ! -f "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz" ]; then
+            cp "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz";
+        fi
+    
+Submitted job 37 with external jobid '26151055'.
+
+[Thu Jan 30 12:30:25 2025]
+Job 7: Adding language tag id for student training
+Reason: Missing output files: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.source.langtagged.gz; Input files updated by another job: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz
+
+
+        bash pipeline/clean/add-lang-tag.sh "eng" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus" "False" "source" "" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/add_langid_corpus_et-en_student.log 2>&1
+        if [ ! -f "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz" ]; then
+            cp "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz";
+        fi
+    
+Submitted job 7 with external jobid '26151056'.
+[Thu Jan 30 12:36:38 2025]
+Error in rule add_lang_tag_corpus_src_for_student:
+    jobid: 37
+    input: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz
+    output: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.source.langtagged.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz
+    log: /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/add_langid_corpus_fi-en_student.log (check log file(s) for error details)
+    conda-env: /conda-envs/2136826cedd87282a9c8ae65380d9949
+    shell:
+        
+        bash pipeline/clean/add-lang-tag.sh "eng" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus" "False" "source" "" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/add_langid_corpus_fi-en_student.log 2>&1
+        if [ ! -f "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz" ]; then
+            cp "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz";
+        fi
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 26151055
+
+Error executing rule add_lang_tag_corpus_src_for_student on cluster (jobid: 37, external: 26151055, jobscript: /scratch/project_2011987/OpusDistillery/.snakemake/tmp.5355adsg/snakejob.add_lang_tag_corpus_src_for_student.37.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Jan 30 12:36:39 2025]
+Error in rule add_lang_tag_corpus_src_for_student:
+    jobid: 7
+    input: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.source.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/fi-en/corpus.target.gz
+    output: /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.source.langtagged.gz, /scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz
+    log: /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/add_langid_corpus_et-en_student.log (check log file(s) for error details)
+    conda-env: /conda-envs/2136826cedd87282a9c8ae65380d9949
+    shell:
+        
+        bash pipeline/clean/add-lang-tag.sh "eng" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus" "False" "source" "" >> /scratch/project_2011987/OpusDistillery/rules/../data/logs/test/fiu-eng/add_langid_corpus_et-en_student.log 2>&1
+        if [ ! -f "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz" ]; then
+            cp "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz" "/scratch/project_2011987/OpusDistillery/rules/../data/data/test/fiu-eng/filtered/et-en/corpus.target.gz";
+        fi
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 26151056
+
+Error executing rule add_lang_tag_corpus_src_for_student on cluster (jobid: 7, external: 26151056, jobscript: /scratch/project_2011987/OpusDistillery/.snakemake/tmp.5355adsg/snakejob.add_lang_tag_corpus_src_for_student.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-01-30T111809.975432.snakemake.log

@@ -1,0 +1,41 @@
+Hindi-English: 
+
+Hin-Eng1: hin-eng/opus+bt-2021-04-30 (Marian)
+Hin-Eng2: inc-eng/opusTCv20230926max50+bt+jhubc_transformer-big_2024-08-17 (Marian)
+HPLT/translate-hi-en-v1.0-hplt_opus (huggingface)
+
+Spanish-English
+Spa-Eng2: Tatoeba-MT-models/mul-mul/opusTCv20230926+bt+jhubc_transformer-big_2024-08-17
+Spa-Eng3: Tatoeba-MT-models/cat+oci+spa-eng/opusTCv20210807+bt_transformer-big_2022-03-13
+Spa-Eng4: Tatoeba-MT-models/mul-eng/opusTCv20230926max50+bt+jhubc_transformer-big_2024-08-17
+Spa-Eng5: Tatoeba-MT-models/deu+eng+fra+por+spa-mul/opusTCv20230926max50+bt+jhubc_transformer-big_2024-05-30
+Spa-Eng6: Tatoeba-MT-models/deu+eng+fra+por+spa-ine/opusTCv20230926max50+bt+jhubc_transformer-big_2024-05-30
+Spa-Eng7: Tatoeba-MT-models/deu+eng+fra+por+spa-gmw/opusTCv20230926max50+bt+jhubc_transformer-big_2024-05-30
+Spa-Eng8: Tatoeba-MT-models/deu+eng+fra+por+spa-gem/opusTCv20230926max50+bt+jhubc_transformer-big_2024-05-30
+Spa-Eng9: Tatoeba-MT-models/ine-eng/opusTCv20230926max50+bt+jhubc_transformer-big_2024-08-17
+
+
+Model scores: 4_Spanglish: 
+	Model 2: 42.92
+	Model 3: 40.18
+	Model 4: 31.33
+	Model 5: 43.62
+	Model 6: 42.60
+	Model 7: 41.13
+	Model 8: 41.75
+	Model 9: 34.40
+
+Model for creating translations:
+	Spanglish: huggingface: Helsinki-NLP/opus-mt-es-en:
+		BLEU for Tatoeba 6,500 sentences: 56
+		ChrF for Tatoeba 6,500 sentences: 71.3
+
+Model scores for MT data 4_Spanglish:
+	Model2: 50.8
+	Model3: 51.8
+	Model4: 38.7
+	Model5:	53.0
+	Model6: 52.4
+	Model7: 52.0
+	Model8: 52.6
+	Model9: 42.6

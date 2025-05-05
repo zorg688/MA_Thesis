@@ -4,3 +4,13 @@ paper 4: Spanglish-English - natural translated -> evaluation externally, no gol
 paper 5: Frenglish-English, Spanglish-English - MT translated -> requested data from researchers -> no data but access to code for generation of code-switched input
 paper 8: Hinglish-English - natural translated -> 6,097 sentences total
 paper 9 and GitHub: Hinglish-English - MT necessary -> 31,756 training, 6,279 validation, 6,420 test, 44,453 total sentences
+
+data augmentation for creating synthetic translations -> create baseline model using Spanglish and Hinglish data
+check performance for those
+then knowledge distillation pipeline
+
+baseline model: training on distill data and compare
+
+run distillation with different seeds
+
+-> comparison actually: 4-5 different model sizes -> different seeds -> test robustness

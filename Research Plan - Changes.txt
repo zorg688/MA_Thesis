@@ -1,0 +1,39 @@
+Old plan:
+
+Get teacher model scores
+
+for each teacher model:
+	- get 5 student models for transformer size
+	- get 5 student models for transformer tiny size
+	- get student model scores
+	- compare student model scores
+		- get standard deviation for transformer size distribution
+		- get standard deviation for transformer-tiny size distribution
+		- check if standard deviation is bigger or smaller
+			- if bigger -> less robust
+			- if smaller -> more robust
+	
+for each dataset:
+	- get 5 baseline models for transformer size
+	- get 5 baseline models for transformer-tiny size
+	- compare performance to student models
+		- same as different model sizes
+
+-----------------------------------------------------------------------------------
+
+New Plan:
+
+- get teacher model scores
+	- check predictions for obvious errors and issues
+
+- get student model scores for transformer and tiny sizes
+	- compare individual scores to teachers and also mean performance to check for regularity
+		- if all performances better: KD is useful
+		- if not all performances are better: depends on the errors
+		- if none are better: sequence based KD not useful for language normalization of code-mixed languages
+	- check predictions for obvious errors and issues compared to teacher models
+
+- get baseline model scores
+	- compare individual scores to teachers and students and also mean performance to check for regularities
+		- if scores are better than student models: 
+	- check predictions for obvious errors and issues compared to teacher and student models
