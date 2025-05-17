@@ -2,7 +2,8 @@ import numpy as np
 
 import pandas as pd
 
-a = np.array([1, 2, 3, 4, 2])
+test_dict = {"Row1": [("test", "test2"), "test3"], "Row2": ["Test"]}
 
-print(np.where(a == 3))
-print(np.where(a == 3)[0][0])
+test_output = pd.DataFrame.from_dict(test_dict, orient = "index")
+
+print(f"This is a test: \n{test_output}")
