@@ -39,15 +39,20 @@ if __name__=="__main__":
 
     keep_going = True
 
-    while keep_going:
+    while True:
         print("These are the available models: ")
         for item in list(model_sets.items()):
             print(f"Press {item[0]} for model set {item[-1]}")
+        print("Press 'c' to exit the selection")
 
         choice_model = input("\nEnter your choice here: ")
-        
-        is_baseline = check_baseline(choice_model)
 
+        if choice_model =="c":
+            print("Goodbye!")
+            break
+
+
+        is_baseline = check_baseline(choice_model)
 
         print("\nThese are the possible model sizes: ")
         for item in list(model_size.items()):
@@ -55,14 +60,17 @@ if __name__=="__main__":
         choice_size = input("\nEnter your choice: ")
 
         print("\nThank you! Please choose a sentence index now")
-        sentence_index = input("Enter your index here: ")
 
-        read_sentences(is_baseline, model_sets[choice_model], model_size[choice_size], sentence_index)
+        while True:
+            sentence_index = input("Enter your index here: ")
 
-        input("\nWaiting for confirmation...")
+            read_sentences(is_baseline, model_sets[choice_model], model_size[choice_size], sentence_index)
 
-        decision = input("Would you like to check another set or another sentence? \nPress 'y'to keep going, or press 'n' to close the program" )
+            input("\nWaiting for confirmation...")
 
-        if decision == "n":
-            keep_going = False
+            another_sentence = input("Would you like to check another sentence for the same set?\Press 'y' to choose another sentence, or press 'n' to go back to the set selection: ")
+
+            if another_sentence =="n":
+                break
+
 

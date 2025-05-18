@@ -2,8 +2,14 @@ import numpy as np
 
 import pandas as pd
 
-test_dict = {"Row1": [("test", "test2"), "test3"], "Row2": ["Test"]}
+with open("test_doc.txt", mode="r", encoding="UTF-8") as file:
+    test_list = file.readlines()
 
-test_output = pd.DataFrame.from_dict(test_dict, orient = "index")
+test_frame = pd.read_csv("test_doc.txt", sep="\t")
 
-print(f"This is a test: \n{test_output}")
+print(test_list)
+print(test_frame)
+print(np.where(test_frame["Start"]=="Moin")[0][0])
+
+for thing in test_frame["Sentence"]:
+    print(thing)
