@@ -12,16 +12,10 @@ def read_sentences(is_baseline, model_name, model_size, sentence_index):
             sentence = lines[int(sentence_index)-1]
         print(f"This is the teacher prediction for sentence{sentence_index}:\n{sentence}\n")
 
-    if is_baseline:
-        for index in range(5):
-            with open(f"../Predictions_for_submission/Student_Predictions/{model_name}/{model_name}_{model_size}_model{index+1}.en", mode="r", encoding="UTF-8") as file:
-                lines = file.readlines()
-                print(f"Model {index+1} prediction for sentence {sentence_index}:\n{lines[int(sentence_index)-1]}\n")
-    else: 
-        for index in range(5):
-            with open(f"../Predictions_for_submission/Student_Predictions/{model_name}/{model_name}_{model_size}_student{index+1}.en", mode="r", encoding="UTF-8") as file:
-                lines = file.readlines()
-                print(f"Model {index+1} prediction for sentence {sentence_index}:\n{lines[int(sentence_index)-1]}\n")
+    for index in range(5):
+        with open(f"../Predictions_for_submission/Student_Predictions/{model_name}/{model_name}_{model_size}_model{index+1}.txt", mode="r", encoding="UTF-8") as file:
+            lines = file.readlines()
+            print(f"Model {index+1} prediction for sentence {sentence_index}:\n{lines[int(sentence_index)-1]}\n")
 
 
 def check_baseline(model_index):
