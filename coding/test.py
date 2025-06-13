@@ -1,6 +1,6 @@
-#import numpy as np
+import numpy as np
 
-#import pandas as pd
+import pandas as pd
 
 import os
 
@@ -32,5 +32,40 @@ def rename_preds():
                     os.rename(f"{filepath}/{fileset}/{fileset}_transformer_{model}.en", f"{filepath}/{fileset}/{fileset}_transformer_{model}.txt")
             print(f"Done with {iterator} of 5", end="\r") 
 
+def find_good_sentences():
+    file_dir = "data/4_Spanglish_Hinglish/mt_spanglisheng/test.txt"
+
+    scored_sentences = []
+
+    with open(file_dir, mode ="r", encoding="UTF-8") as file:
+          lines = file.readlines()
+
+    for index, line in enumerate(lines): 
+        print(f"Working on line {index +1} out of 6500...", end="\r")
+        line = line.strip("\n").split(" ")
+        max_score = len(line)
+        score = len(line)
+        for token in line:
+            if not token.isalnum():
+                score -= 1
+        scored_sentences.append((index+1, line, np.round(score/max_score, 8)))
+
+    sorted_sentences = sorted(scored_sentences, key= lambda x: x[2], reverse = True)
+
+    with open("sentences_for_checking.txt", mode ="w", encoding = "UTF-8") as file:
+        for element in sorted_sentences:
+            file.write(str(element[0]) + "\t" + " ".join(element[1]) + "\t" + str(element[2]) +"\n")
+    print("\nDone!")
+
+def show_scored_sentences(ranked_bool):
+
+    sentences = pd.read_csv("sentences_for_checking.txt", sep="\t", names =["SentenceID", "Sentence", "Score"])
+
+    print(sentences.sort_values("SentenceID", axis = 0)[:55])
+
+
+        
 if __name__ == "__main__":
-    rename_preds()
+    #rename_preds()
+    #find_good_sentences()
+    show_scored_sentences(True)
