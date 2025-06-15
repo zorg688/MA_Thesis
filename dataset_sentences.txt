@@ -1,0 +1,40 @@
+1
+2
+3
+4
+6
+8
+13
+16
+21
+34
+36
+38
+40
+44
+47
+50
+51
+
+True False False True True True True True True True True False True False False False -> T:10
+
+False False True True True True True True False False True True True False False False -> T:9
+
+100/length
+
+100/16 = 6.25
+
+10/16 = 0.625
+9/16 = 0.5625
+	
+
+8
+21
+72
+403
+1053
+1110
+1216
+1507
+4727
+4023
