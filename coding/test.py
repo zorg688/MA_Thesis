@@ -7,15 +7,19 @@ from zipfile import ZipFile
 import os
 
 def find_empty_preds():
-    for model_num in range(5):
-        with open(f"../Predictions_for_submission/Student_Predictions/defps-mul/defps-mul_transformer_tiny_model{model_num+1}.txt", mode= "r", encoding = "UTF-8") as file:
-            text = file.readlines()
-        indexed_text = []
 
-        for index, line in enumerate(text):
-            indexed_text.append((index+1, line))
-        sorted_text = sorted(indexed_text, key = lambda x: len(x[1]) )
-        print(f"Empty Sentence predictions for Model {model_num+1}\n", sorted_text[0:10])
+    models = ["baseline2021", "baseline2023"]
+
+    for model in models:
+        for model_num in range(5):
+            with open(f"../Predictions_for_submission/Student_Predictions/{model}/{model}_transformer_tiny_model{model_num+1}.txt", mode= "r", encoding = "UTF-8") as file:
+                text = file.readlines()
+            indexed_text = []
+
+            for index, line in enumerate(text):
+                indexed_text.append((index+1, line))
+            sorted_text = sorted(indexed_text, key = lambda x: len(x[1]) )
+            print(f"Empty Sentence predictions for Model {model} {model_num+1}\n", sorted_text[0:10])
 
 
 def rename_preds():
@@ -67,7 +71,8 @@ def show_scored_sentences(ranked_bool):
 
 def package_predictions():
     #models = ["cat+oci+spa-eng", "mul-mul", "defps-mul"]
-    models = ["cat+oci+spa-eng"]
+    models = ["baseline2021", "baseline2023"]
+    #models = ["cat+oci+spa-eng"]
 
     #iterate through prediction files
     for model in models:
@@ -78,22 +83,25 @@ def package_predictions():
             renamed_file = f"../Predictions_for_submission/Student_Predictions/{model}/mt_spanglish_eng.txt"
 
             #rename file
-            os.rename(model_path, renamed_file)
+            if os.path.exists(model_path):
+                os.rename(model_path, renamed_file)
 
-            #check if renamed file exists
-            if os.path.exists(renamed_file):
-                print("Zipping file!")
+                #check if renamed file exists
+                if os.path.exists(renamed_file):
+                    print("Zipping file!")
 
-                #zip file in its own zip
-                with ZipFile(f"../Predictions_for_submission/Student_Predictions/{model}/{model}_transformer_tiny_model{model_num+1}.zip", "w") as zipfile:
-                    zipfile.write(renamed_file)
+                    #zip file in its own zip
+                    with ZipFile(f"../Predictions_for_submission/Student_Predictions/{model}/{model}_transformer_tiny_model{model_num+1}.zip", "w") as zippy:
+                        zippy.write(renamed_file)
 
-                    #check zip contents
-                    zipfile.printdir()
+                        #check zip contents
+                        zippy.printdir()
 
-            #remove renamed file to avoid conflicts
-            os.remove(renamed_file)
-            
+                #remove renamed file to avoid conflicts
+                #os.remove(renamed_file)
+            else: 
+                print("Files already zipped!")
+            break
         print(f"Done with model {model}!")
 
         
@@ -101,5 +109,5 @@ if __name__ == "__main__":
     #rename_preds()
     #find_good_sentences()
     #show_scored_sentences(True)
-    #find_empty_preds()
-    package_predictions()
+    find_empty_preds()
+    #package_predictions()
