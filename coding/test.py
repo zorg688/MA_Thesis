@@ -6,6 +6,8 @@ from zipfile import ZipFile
 
 import os
 
+import statistics as stats
+
 def find_empty_preds():
 
     models = ["baseline2021", "baseline2023"]
@@ -104,10 +106,20 @@ def package_predictions():
             break
         print(f"Done with model {model}!")
 
+def calculate_time():
+    times = input("Input sequence of times: ")
+
+
+    times = [float(duration) for duration in times.split(",")]
+    print(f"Median is {stats.median(times)}")
+
+
         
+
 if __name__ == "__main__":
     #rename_preds()
     #find_good_sentences()
     #show_scored_sentences(True)
-    find_empty_preds()
+    #find_empty_preds()
     #package_predictions()
+    calculate_time()
