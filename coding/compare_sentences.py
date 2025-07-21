@@ -29,7 +29,7 @@ if __name__=="__main__":
                   "3": "cat+oci+spa-eng", 
                   "4": "mul-mul", 
                   "5": "defps-mul"}
-    model_size = {"1": "transformer", "2": "transformer-tiny"}
+    model_size = {"1": "transformer", "2": "transformer_tiny"}
 
     keep_going = True
 
@@ -62,7 +62,7 @@ if __name__=="__main__":
 
             input("\nWaiting for confirmation...")
 
-            another_sentence = input("Would you like to check another sentence for the same set?\Press 'y' to choose another sentence, or press 'n' to go back to the set selection: ")
+            another_sentence = input("Would you like to check another sentence for the same set?\nPress 'y' to choose another sentence, or press 'n' to go back to the set selection: ")
 
             if another_sentence =="n":
                 break

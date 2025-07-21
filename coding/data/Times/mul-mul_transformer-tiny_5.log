@@ -1,0 +1,739 @@
+[2025-06-14 14:52:40] [marian] Marian v1.12.31 a6ab8af8 2024-06-27 15:21:08 +0000
+[2025-06-14 14:52:40] [marian] Running on r15g06.bullx as process 23 with command line:
+[2025-06-14 14:52:40] [marian] /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build//marian --model /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz -c configs/model/student.yml configs/training/student.train.yml --train-sets /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/mul-mul/filtered/corpus.source.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/mul-mul/filtered/corpus.target.gz -T /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/tmp --shuffle-in-ram --vocabs /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/vocab/vocab.spm /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/vocab/vocab.spm -w 25000 --devices 0 1 --sharding local --sync-sgd --valid-metrics perplexity chrf ce-mean-words --valid-sets /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/mul-mul/original/devset.student.source.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/mul-mul/original/devset.student.target.gz --valid-translation-output '/scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/valid_outputs/validation-output-after-{U}-updates-{E}-epochs.txt' --quiet-translation --overwrite --keep-best --log /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/train.log --valid-log /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/valid.log
+[2025-06-14 14:52:40] [config] after: 0e
+[2025-06-14 14:52:40] [config] after-batches: 0
+[2025-06-14 14:52:40] [config] after-epochs: 0
+[2025-06-14 14:52:40] [config] all-caps-every: 0
+[2025-06-14 14:52:40] [config] allow-unk: false
+[2025-06-14 14:52:40] [config] authors: false
+[2025-06-14 14:52:40] [config] beam-size: 1
+[2025-06-14 14:52:40] [config] bert-class-symbol: "[CLS]"
+[2025-06-14 14:52:40] [config] bert-mask-symbol: "[MASK]"
+[2025-06-14 14:52:40] [config] bert-masking-fraction: 0.15
+[2025-06-14 14:52:40] [config] bert-sep-symbol: "[SEP]"
+[2025-06-14 14:52:40] [config] bert-train-type-embeddings: true
+[2025-06-14 14:52:40] [config] bert-type-vocab-size: 2
+[2025-06-14 14:52:40] [config] build-info: ""
+[2025-06-14 14:52:40] [config] check-gradient-nan: false
+[2025-06-14 14:52:40] [config] check-nan: false
+[2025-06-14 14:52:40] [config] cite: false
+[2025-06-14 14:52:40] [config] clip-norm: 0
+[2025-06-14 14:52:40] [config] comet-augment-bad: 0
+[2025-06-14 14:52:40] [config] comet-dropout: 0.1
+[2025-06-14 14:52:40] [config] comet-final-sigmoid: false
+[2025-06-14 14:52:40] [config] comet-mix: false
+[2025-06-14 14:52:40] [config] comet-mix-norm: false
+[2025-06-14 14:52:40] [config] comet-mix-transformation: softmax
+[2025-06-14 14:52:40] [config] comet-mixup: 0
+[2025-06-14 14:52:40] [config] comet-mixup-reg: false
+[2025-06-14 14:52:40] [config] comet-pool: avg
+[2025-06-14 14:52:40] [config] comet-pooler-ffn:
+[2025-06-14 14:52:40] [config]   - 2048
+[2025-06-14 14:52:40] [config]   - 1024
+[2025-06-14 14:52:40] [config] comet-prepend-zero: false
+[2025-06-14 14:52:40] [config] comet-stop-grad: false
+[2025-06-14 14:52:40] [config] comet-use-separator: false
+[2025-06-14 14:52:40] [config] cost-scaling:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] cost-type: ce-mean-words
+[2025-06-14 14:52:40] [config] cpu-threads: 0
+[2025-06-14 14:52:40] [config] custom-fallbacks:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] data-threads: 8
+[2025-06-14 14:52:40] [config] data-weighting: ""
+[2025-06-14 14:52:40] [config] data-weighting-type: sentence
+[2025-06-14 14:52:40] [config] dec-cell: ssru
+[2025-06-14 14:52:40] [config] dec-cell-base-depth: 2
+[2025-06-14 14:52:40] [config] dec-cell-high-depth: 1
+[2025-06-14 14:52:40] [config] dec-depth: 2
+[2025-06-14 14:52:40] [config] devices:
+[2025-06-14 14:52:40] [config]   - 0
+[2025-06-14 14:52:40] [config]   - 1
+[2025-06-14 14:52:40] [config] dim-emb: 256
+[2025-06-14 14:52:40] [config] dim-rnn: 1024
+[2025-06-14 14:52:40] [config] dim-vocabs:
+[2025-06-14 14:52:40] [config]   - 0
+[2025-06-14 14:52:40] [config]   - 0
+[2025-06-14 14:52:40] [config] disp-first: 10
+[2025-06-14 14:52:40] [config] disp-freq: 1000
+[2025-06-14 14:52:40] [config] disp-label-counts: true
+[2025-06-14 14:52:40] [config] dropout-rnn: 0.1
+[2025-06-14 14:52:40] [config] dropout-src: 0
+[2025-06-14 14:52:40] [config] dropout-trg: 0
+[2025-06-14 14:52:40] [config] dump-config: ""
+[2025-06-14 14:52:40] [config] dynamic-gradient-scaling:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] early-stopping: 5
+[2025-06-14 14:52:40] [config] early-stopping-epsilon:
+[2025-06-14 14:52:40] [config]   - 0
+[2025-06-14 14:52:40] [config] early-stopping-on: first
+[2025-06-14 14:52:40] [config] embedding-fix-src: false
+[2025-06-14 14:52:40] [config] embedding-fix-trg: false
+[2025-06-14 14:52:40] [config] embedding-normalization: false
+[2025-06-14 14:52:40] [config] embedding-vectors:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] enc-cell: gru
+[2025-06-14 14:52:40] [config] enc-cell-depth: 1
+[2025-06-14 14:52:40] [config] enc-depth: 6
+[2025-06-14 14:52:40] [config] enc-type: bidirectional
+[2025-06-14 14:52:40] [config] english-title-case-every: 0
+[2025-06-14 14:52:40] [config] exponential-smoothing: True
+[2025-06-14 14:52:40] [config] exponential-smoothing-replace-freq: 0
+[2025-06-14 14:52:40] [config] factor-weight: 1
+[2025-06-14 14:52:40] [config] factors-combine: sum
+[2025-06-14 14:52:40] [config] factors-dim-emb: 0
+[2025-06-14 14:52:40] [config] gradient-checkpointing: false
+[2025-06-14 14:52:40] [config] gradient-norm-average-window: 100
+[2025-06-14 14:52:40] [config] guided-alignment: none
+[2025-06-14 14:52:40] [config] guided-alignment-cost: ce
+[2025-06-14 14:52:40] [config] guided-alignment-weight: 0.1
+[2025-06-14 14:52:40] [config] ignore-model-config: false
+[2025-06-14 14:52:40] [config] input-join-fields: false
+[2025-06-14 14:52:40] [config] input-reorder:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] input-types:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] interpolate-env-vars: false
+[2025-06-14 14:52:40] [config] keep-best: true
+[2025-06-14 14:52:40] [config] label-smoothing: 0
+[2025-06-14 14:52:40] [config] layer-normalization: false
+[2025-06-14 14:52:40] [config] learn-rate: 0.0003
+[2025-06-14 14:52:40] [config] lemma-dependency: ""
+[2025-06-14 14:52:40] [config] lemma-dim-emb: 0
+[2025-06-14 14:52:40] [config] log: /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/train.log
+[2025-06-14 14:52:40] [config] log-level: info
+[2025-06-14 14:52:40] [config] log-time-zone: ""
+[2025-06-14 14:52:40] [config] logical-epoch:
+[2025-06-14 14:52:40] [config]   - 1e
+[2025-06-14 14:52:40] [config]   - 0
+[2025-06-14 14:52:40] [config] lr-decay: 0
+[2025-06-14 14:52:40] [config] lr-decay-freq: 50000
+[2025-06-14 14:52:40] [config] lr-decay-inv-sqrt:
+[2025-06-14 14:52:40] [config]   - 32000
+[2025-06-14 14:52:40] [config] lr-decay-repeat-warmup: false
+[2025-06-14 14:52:40] [config] lr-decay-reset-optimizer: false
+[2025-06-14 14:52:40] [config] lr-decay-start:
+[2025-06-14 14:52:40] [config]   - 10
+[2025-06-14 14:52:40] [config]   - 1
+[2025-06-14 14:52:40] [config] lr-decay-strategy: epoch+stalled
+[2025-06-14 14:52:40] [config] lr-report: True
+[2025-06-14 14:52:40] [config] lr-warmup: 16000
+[2025-06-14 14:52:40] [config] lr-warmup-at-reload: false
+[2025-06-14 14:52:40] [config] lr-warmup-cycle: false
+[2025-06-14 14:52:40] [config] lr-warmup-start-rate: 0
+[2025-06-14 14:52:40] [config] max-length: 200
+[2025-06-14 14:52:40] [config] max-length-crop: false
+[2025-06-14 14:52:40] [config] max-length-factor: 3
+[2025-06-14 14:52:40] [config] maxi-batch: 1000
+[2025-06-14 14:52:40] [config] maxi-batch-sort: trg
+[2025-06-14 14:52:40] [config] mini-batch: 1000
+[2025-06-14 14:52:40] [config] mini-batch-fit: True
+[2025-06-14 14:52:40] [config] mini-batch-fit-step: 10
+[2025-06-14 14:52:40] [config] mini-batch-round-up: true
+[2025-06-14 14:52:40] [config] mini-batch-track-lr: false
+[2025-06-14 14:52:40] [config] mini-batch-warmup: 0
+[2025-06-14 14:52:40] [config] mini-batch-words: 0
+[2025-06-14 14:52:40] [config] mini-batch-words-ref: 0
+[2025-06-14 14:52:40] [config] model: /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 14:52:40] [config] multi-loss-type: sum
+[2025-06-14 14:52:40] [config] n-best: false
+[2025-06-14 14:52:40] [config] no-nccl: false
+[2025-06-14 14:52:40] [config] no-optimizer-reload: false
+[2025-06-14 14:52:40] [config] no-reload: false
+[2025-06-14 14:52:40] [config] no-restore-corpus: false
+[2025-06-14 14:52:40] [config] no-spm-encode: false
+[2025-06-14 14:52:40] [config] normalize: 1
+[2025-06-14 14:52:40] [config] normalize-gradient: false
+[2025-06-14 14:52:40] [config] normalize-gradient-by-ratio: false
+[2025-06-14 14:52:40] [config] optimizer: adam
+[2025-06-14 14:52:40] [config] optimizer-delay: 2
+[2025-06-14 14:52:40] [config] optimizer-params:
+[2025-06-14 14:52:40] [config]   - 0.9
+[2025-06-14 14:52:40] [config]   - 0.98
+[2025-06-14 14:52:40] [config]   - 1e-09
+[2025-06-14 14:52:40] [config] output-omit-bias: false
+[2025-06-14 14:52:40] [config] overwrite: true
+[2025-06-14 14:52:40] [config] overwrite-checkpoint: true
+[2025-06-14 14:52:40] [config] precision:
+[2025-06-14 14:52:40] [config]   - float32
+[2025-06-14 14:52:40] [config]   - float32
+[2025-06-14 14:52:40] [config] pretrained-model: ""
+[2025-06-14 14:52:40] [config] quantize-biases: false
+[2025-06-14 14:52:40] [config] quantize-bits: 0
+[2025-06-14 14:52:40] [config] quantize-log-based: false
+[2025-06-14 14:52:40] [config] quantize-optimization-steps: 0
+[2025-06-14 14:52:40] [config] quiet: false
+[2025-06-14 14:52:40] [config] quiet-translation: true
+[2025-06-14 14:52:40] [config] quiet-validation: false
+[2025-06-14 14:52:40] [config] relative-paths: false
+[2025-06-14 14:52:40] [config] right-left: false
+[2025-06-14 14:52:40] [config] save-freq: 5000
+[2025-06-14 14:52:40] [config] seed: 0
+[2025-06-14 14:52:40] [config] sentencepiece-alphas:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] sentencepiece-max-lines: 2000000
+[2025-06-14 14:52:40] [config] sentencepiece-options: ""
+[2025-06-14 14:52:40] [config] separator-symbol: "[eos]"
+[2025-06-14 14:52:40] [config] sharding: local
+[2025-06-14 14:52:40] [config] shuffle: data
+[2025-06-14 14:52:40] [config] shuffle-in-ram: true
+[2025-06-14 14:52:40] [config] sigterm: save-and-exit
+[2025-06-14 14:52:40] [config] skip: false
+[2025-06-14 14:52:40] [config] sqlite: ""
+[2025-06-14 14:52:40] [config] sqlite-drop: false
+[2025-06-14 14:52:40] [config] sync-freq: 200u
+[2025-06-14 14:52:40] [config] sync-sgd: true
+[2025-06-14 14:52:40] [config] tempdir: /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/tmp
+[2025-06-14 14:52:40] [config] throw-on-divergence:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] tied-embeddings: false
+[2025-06-14 14:52:40] [config] tied-embeddings-all: true
+[2025-06-14 14:52:40] [config] tied-embeddings-src: false
+[2025-06-14 14:52:40] [config] train-embedder-rank:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] train-sets:
+[2025-06-14 14:52:40] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/mul-mul/filtered/corpus.source.gz
+[2025-06-14 14:52:40] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/mul-mul/filtered/corpus.target.gz
+[2025-06-14 14:52:40] [config] transformer-aan-activation: swish
+[2025-06-14 14:52:40] [config] transformer-aan-depth: 2
+[2025-06-14 14:52:40] [config] transformer-aan-nogate: false
+[2025-06-14 14:52:40] [config] transformer-alibi-shift: false
+[2025-06-14 14:52:40] [config] transformer-alibi-trainable: false
+[2025-06-14 14:52:40] [config] transformer-attention-mask: default
+[2025-06-14 14:52:40] [config] transformer-decoder-autoreg: rnn
+[2025-06-14 14:52:40] [config] transformer-decoder-dim-ffn: 0
+[2025-06-14 14:52:40] [config] transformer-decoder-ffn-depth: 0
+[2025-06-14 14:52:40] [config] transformer-depth-scaling: false
+[2025-06-14 14:52:40] [config] transformer-dim-aan: 2048
+[2025-06-14 14:52:40] [config] transformer-dim-ffn: 1536
+[2025-06-14 14:52:40] [config] transformer-disable-position-embeddings: false
+[2025-06-14 14:52:40] [config] transformer-dropout: 0
+[2025-06-14 14:52:40] [config] transformer-dropout-attention: 0
+[2025-06-14 14:52:40] [config] transformer-dropout-ffn: 0
+[2025-06-14 14:52:40] [config] transformer-ffn-activation: relu
+[2025-06-14 14:52:40] [config] transformer-ffn-depth: 2
+[2025-06-14 14:52:40] [config] transformer-guided-alignment-layer: last
+[2025-06-14 14:52:40] [config] transformer-heads: 8
+[2025-06-14 14:52:40] [config] transformer-no-affine: false
+[2025-06-14 14:52:40] [config] transformer-no-bias: false
+[2025-06-14 14:52:40] [config] transformer-no-projection: false
+[2025-06-14 14:52:40] [config] transformer-pool: false
+[2025-06-14 14:52:40] [config] transformer-postprocess: dan
+[2025-06-14 14:52:40] [config] transformer-postprocess-emb: d
+[2025-06-14 14:52:40] [config] transformer-postprocess-top: ""
+[2025-06-14 14:52:40] [config] transformer-preprocess: ""
+[2025-06-14 14:52:40] [config] transformer-rnn-projection: false
+[2025-06-14 14:52:40] [config] transformer-tied-layers:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] transformer-train-position-embeddings: false
+[2025-06-14 14:52:40] [config] tsv: false
+[2025-06-14 14:52:40] [config] tsv-fields: 0
+[2025-06-14 14:52:40] [config] type: transformer
+[2025-06-14 14:52:40] [config] ulr: false
+[2025-06-14 14:52:40] [config] ulr-dim-emb: 0
+[2025-06-14 14:52:40] [config] ulr-dropout: 0
+[2025-06-14 14:52:40] [config] ulr-keys-vectors: ""
+[2025-06-14 14:52:40] [config] ulr-query-vectors: ""
+[2025-06-14 14:52:40] [config] ulr-softmax-temperature: 1
+[2025-06-14 14:52:40] [config] ulr-trainable-transformation: false
+[2025-06-14 14:52:40] [config] unlikelihood-loss: false
+[2025-06-14 14:52:40] [config] valid-freq: 5000
+[2025-06-14 14:52:40] [config] valid-log: /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/valid.log
+[2025-06-14 14:52:40] [config] valid-max-length: 1000
+[2025-06-14 14:52:40] [config] valid-metrics:
+[2025-06-14 14:52:40] [config]   - perplexity
+[2025-06-14 14:52:40] [config]   - chrf
+[2025-06-14 14:52:40] [config]   - ce-mean-words
+[2025-06-14 14:52:40] [config] valid-mini-batch: 64
+[2025-06-14 14:52:40] [config] valid-reset-all: false
+[2025-06-14 14:52:40] [config] valid-reset-stalled: false
+[2025-06-14 14:52:40] [config] valid-script-args:
+[2025-06-14 14:52:40] [config]   []
+[2025-06-14 14:52:40] [config] valid-script-path: ""
+[2025-06-14 14:52:40] [config] valid-sets:
+[2025-06-14 14:52:40] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/mul-mul/original/devset.student.source.gz
+[2025-06-14 14:52:40] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/mul-mul/original/devset.student.target.gz
+[2025-06-14 14:52:40] [config] valid-translation-output: /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/valid_outputs/validation-output-after-{U}-updates-{E}-epochs.txt
+[2025-06-14 14:52:40] [config] vocabs:
+[2025-06-14 14:52:40] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/vocab/vocab.spm
+[2025-06-14 14:52:40] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/vocab/vocab.spm
+[2025-06-14 14:52:40] [config] word-penalty: 0
+[2025-06-14 14:52:40] [config] word-scores: false
+[2025-06-14 14:52:40] [config] workspace: 25000
+[2025-06-14 14:52:40] [config] Model is being created with Marian v1.12.31 a6ab8af8 2024-06-27 15:21:08 +0000
+[2025-06-14 14:52:40] Using synchronous SGD
+[2025-06-14 14:52:40] [comm] Compiled without MPI support. Running as a single process on r15g06.bullx
+[2025-06-14 14:52:40] Synced seed 1749901960
+[2025-06-14 14:52:40] [data] Loading SentencePiece vocabulary from file /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/vocab/vocab.spm
+[2025-06-14 14:52:40] [data] Setting vocabulary size for input 0 to 32,000
+[2025-06-14 14:52:40] [data] Loading SentencePiece vocabulary from file /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/vocab/vocab.spm
+[2025-06-14 14:52:40] [data] Setting vocabulary size for input 1 to 32,000
+[2025-06-14 14:52:40] [batching] Collecting statistics for batch fitting with step size 10
+[2025-06-14 14:52:41] [memory] Extending reserved space to 25088 MB (device gpu0)
+[2025-06-14 14:52:48] [memory] Extending reserved space to 25088 MB (device gpu1)
+[2025-06-14 14:52:48] [comm] Using NCCL 2.8.3 for GPU communication
+[2025-06-14 14:52:48] [comm] Using global sharding
+[2025-06-14 14:52:48] [comm] NCCLCommunicators constructed successfully
+[2025-06-14 14:52:48] [training] Using 2 GPUs
+[2025-06-14 14:52:48] [logits] Applying loss function for 1 factor(s)
+[2025-06-14 14:52:48] [memory] Reserving 64 MB, device gpu0
+[2025-06-14 14:52:57] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2025-06-14 14:52:57] [memory] Reserving 64 MB, device gpu0
+[2025-06-14 14:53:46] [batching] Done. Typical MB size is 197,998 target words
+[2025-06-14 14:53:46] [memory] Extending reserved space to 25088 MB (device gpu0)
+[2025-06-14 14:53:47] [memory] Extending reserved space to 25088 MB (device gpu1)
+[2025-06-14 14:53:47] [comm] Using NCCL 2.8.3 for GPU communication
+[2025-06-14 14:53:47] [comm] Using global sharding
+[2025-06-14 14:53:47] [comm] NCCLCommunicators constructed successfully
+[2025-06-14 14:53:47] [training] Using 2 GPUs
+[2025-06-14 14:53:47] Training started
+[2025-06-14 14:53:47] [data] Shuffling data
+[2025-06-14 14:54:20] [data] Done reading 30,682,309 sentences
+[2025-06-14 14:54:21] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 14:54:31] [training] Batches are processed as 1 process(es) x 2 devices/process
+[2025-06-14 14:54:31] [memory] Reserving 64 MB, device gpu0
+[2025-06-14 14:54:31] [memory] Reserving 64 MB, device gpu1
+[2025-06-14 14:54:31] [memory] Reserving 64 MB, device gpu0
+[2025-06-14 14:54:32] [memory] Reserving 64 MB, device gpu1
+[2025-06-14 14:54:33] Parameter type float32, optimization type float32, casting types false
+[2025-06-14 14:54:33] Allocating memory for general optimizer shards
+[2025-06-14 14:54:33] [memory] Reserving 32 MB, device gpu0
+[2025-06-14 14:54:33] Allocating memory for Adam-specific shards
+[2025-06-14 14:54:33] [memory] Reserving 64 MB, device gpu0
+[2025-06-14 14:54:33] [memory] Reserving 32 MB, device gpu1
+[2025-06-14 14:54:33] [memory] Reserving 64 MB, device gpu1
+[2025-06-14 14:54:33] Ep. 1 : Up. 1 : Sen. 4,906 : Cost 10.82399750 : Time 46.71s : 3571.21 words/s : gNorm 5.2881 : L.r. 1.8750e-08
+[2025-06-14 14:54:34] Ep. 1 : Up. 2 : Sen. 10,334 : Cost 10.84709835 : Time 0.85s : 159641.91 words/s : gNorm 5.2676 : L.r. 3.7500e-08
+[2025-06-14 14:54:34] Ep. 1 : Up. 3 : Sen. 21,542 : Cost 10.76996899 : Time 0.65s : 137841.98 words/s : gNorm 6.2087 : L.r. 5.6250e-08
+[2025-06-14 14:54:35] Ep. 1 : Up. 4 : Sen. 23,522 : Cost 10.89177418 : Time 0.68s : 161306.52 words/s : gNorm 5.9231 : L.r. 7.5000e-08
+[2025-06-14 14:54:36] Ep. 1 : Up. 5 : Sen. 25,754 : Cost 10.86786747 : Time 0.63s : 139555.94 words/s : gNorm 5.7506 : L.r. 9.3750e-08
+[2025-06-14 14:54:36] Ep. 1 : Up. 6 : Sen. 36,962 : Cost 10.81811714 : Time 0.80s : 167162.23 words/s : gNorm 5.8325 : L.r. 1.1250e-07
+[2025-06-14 14:54:37] Ep. 1 : Up. 7 : Sen. 41,682 : Cost 10.82696915 : Time 0.79s : 184835.42 words/s : gNorm 5.7179 : L.r. 1.3125e-07
+[2025-06-14 14:54:38] Ep. 1 : Up. 8 : Sen. 45,186 : Cost 10.84825134 : Time 0.64s : 148542.51 words/s : gNorm 5.6048 : L.r. 1.5000e-07
+[2025-06-14 14:54:39] Ep. 1 : Up. 9 : Sen. 52,425 : Cost 10.80684757 : Time 0.91s : 206922.37 words/s : gNorm 5.5621 : L.r. 1.6875e-07
+[2025-06-14 14:54:39] Ep. 1 : Up. 10 : Sen. 63,633 : Cost 10.75923729 : Time 0.33s : 184698.25 words/s : gNorm 6.2644 : L.r. 1.8750e-07
+[2025-06-14 15:02:47] Ep. 1 : Up. 1000 : Sen. 6,266,858 : Cost 8.64616585 : Time 488.44s : 250990.25 words/s : gNorm 1.6620 : L.r. 1.8750e-05
+[2025-06-14 15:11:01] Ep. 1 : Up. 2000 : Sen. 12,554,738 : Cost 6.35723209 : Time 493.72s : 251476.82 words/s : gNorm 2.0662 : L.r. 3.7500e-05
+[2025-06-14 15:19:20] Ep. 1 : Up. 3000 : Sen. 18,945,158 : Cost 5.34646845 : Time 498.54s : 250404.69 words/s : gNorm 2.7486 : L.r. 5.6250e-05
+[2025-06-14 15:27:34] Ep. 1 : Up. 4000 : Sen. 25,229,576 : Cost 4.35890961 : Time 494.73s : 250520.62 words/s : gNorm 4.8575 : L.r. 7.5000e-05
+[2025-06-14 15:34:39] Seen 30,682,259 samples
+[2025-06-14 15:34:39] Starting data epoch 2 in logical epoch 2
+[2025-06-14 15:34:39] [data] Shuffling data
+[2025-06-14 15:34:41] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 15:35:53] Ep. 2 : Up. 5000 : Sen. 786,330 : Cost 3.29823184 : Time 498.05s : 246710.62 words/s : gNorm 5.5029 : L.r. 9.3750e-05
+[2025-06-14 15:35:53] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 15:35:53] Saving Adam parameters
+[2025-06-14 15:35:53] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 15:36:12] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-14 15:36:12] [valid] Ep. 2 : Up. 5000 : perplexity : 9.81061 : new best
+[2025-06-14 15:36:12] [valid] First sentence's tokens as scored:
+[2025-06-14 15:36:12] [valid] Decoding validation set with SentencePieceVocab for scoring
+[2025-06-14 15:36:12] [valid]   Hyp: A s s o o n a s T o m o p e n e d t h e b a g , h e k n e w i t w a s n ' t h i s h i s h i s h i s h i s .
+[2025-06-14 15:36:12] [valid]   Ref: A s s o o n a s T o m o p e n e d t h e b a g , h e k n e w i t w a s n ' t h i s .
+[2025-06-14 15:36:16] [valid] References contain unknown word, metric scores may be inaccurate
+[2025-06-14 15:39:28] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-14 15:39:28] [valid] Ep. 2 : Up. 5000 : chrf : 54.4352 : new best
+[2025-06-14 15:39:46] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-14 15:39:46] [valid] Ep. 2 : Up. 5000 : ce-mean-words : 2.28346 : new best
+[2025-06-14 15:48:00] Ep. 2 : Up. 6000 : Sen. 7,050,608 : Cost 2.57132673 : Time 727.91s : 169738.78 words/s : gNorm 5.1211 : L.r. 1.1250e-04
+[2025-06-14 15:56:14] Ep. 2 : Up. 7000 : Sen. 13,362,354 : Cost 1.98801970 : Time 493.22s : 251143.83 words/s : gNorm 3.6595 : L.r. 1.3125e-04
+[2025-06-14 16:04:31] Ep. 2 : Up. 8000 : Sen. 19,594,138 : Cost 1.55780244 : Time 497.18s : 249423.13 words/s : gNorm 2.5458 : L.r. 1.5000e-04
+[2025-06-14 16:12:49] Ep. 2 : Up. 9000 : Sen. 25,972,071 : Cost 1.25660563 : Time 497.80s : 250220.49 words/s : gNorm 2.2909 : L.r. 1.6875e-04
+[2025-06-14 16:18:56] Seen 30,682,259 samples
+[2025-06-14 16:18:56] Starting data epoch 3 in logical epoch 3
+[2025-06-14 16:18:56] [data] Shuffling data
+[2025-06-14 16:18:57] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 16:21:10] Ep. 3 : Up. 10000 : Sen. 1,496,050 : Cost 1.08168888 : Time 501.25s : 245544.96 words/s : gNorm 1.7951 : L.r. 1.8750e-04
+[2025-06-14 16:21:10] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 16:21:10] Saving Adam parameters
+[2025-06-14 16:21:11] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 16:21:30] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-14 16:21:30] [valid] Ep. 3 : Up. 10000 : perplexity : 4.4758 : new best
+[2025-06-14 16:24:41] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-14 16:24:41] [valid] Ep. 3 : Up. 10000 : chrf : 65.9695 : new best
+[2025-06-14 16:24:59] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-14 16:24:59] [valid] Ep. 3 : Up. 10000 : ce-mean-words : 1.49869 : new best
+[2025-06-14 16:33:14] Ep. 3 : Up. 11000 : Sen. 7,890,375 : Cost 0.94115013 : Time 724.16s : 172258.86 words/s : gNorm 1.5857 : L.r. 2.0625e-04
+[2025-06-14 16:41:31] Ep. 3 : Up. 12000 : Sen. 14,133,917 : Cost 0.84449965 : Time 497.06s : 248902.78 words/s : gNorm 1.4715 : L.r. 2.2500e-04
+[2025-06-14 16:49:47] Ep. 3 : Up. 13000 : Sen. 20,466,666 : Cost 0.75671923 : Time 496.01s : 251135.23 words/s : gNorm 1.0921 : L.r. 2.4375e-04
+[2025-06-14 16:58:00] Ep. 3 : Up. 14000 : Sen. 26,741,387 : Cost 0.68307602 : Time 492.74s : 252096.42 words/s : gNorm 1.0630 : L.r. 2.6250e-04
+[2025-06-14 17:03:05] Seen 30,682,259 samples
+[2025-06-14 17:03:05] Starting data epoch 4 in logical epoch 4
+[2025-06-14 17:03:05] [data] Shuffling data
+[2025-06-14 17:03:07] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 17:06:20] Ep. 4 : Up. 15000 : Sen. 2,368,226 : Cost 0.63256073 : Time 500.28s : 245125.00 words/s : gNorm 0.8888 : L.r. 2.8125e-04
+[2025-06-14 17:06:20] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 17:06:21] Saving Adam parameters
+[2025-06-14 17:06:21] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 17:06:39] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-14 17:06:39] [valid] Ep. 4 : Up. 15000 : perplexity : 3.50183 : new best
+[2025-06-14 17:09:52] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-14 17:09:53] [valid] Ep. 4 : Up. 15000 : chrf : 69.5763 : new best
+[2025-06-14 17:10:10] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-14 17:10:11] [valid] Ep. 4 : Up. 15000 : ce-mean-words : 1.25329 : new best
+[2025-06-14 17:18:24] Ep. 4 : Up. 16000 : Sen. 8,618,896 : Cost 0.58754164 : Time 724.01s : 171481.90 words/s : gNorm 0.8151 : L.r. 3.0000e-04
+[2025-06-14 17:26:36] Ep. 4 : Up. 17000 : Sen. 14,930,085 : Cost 0.55347955 : Time 492.01s : 252051.74 words/s : gNorm 0.6941 : L.r. 3.0000e-04
+[2025-06-14 17:34:52] Ep. 4 : Up. 18000 : Sen. 21,287,960 : Cost 0.51840931 : Time 495.95s : 250490.81 words/s : gNorm 0.6342 : L.r. 3.0000e-04
+[2025-06-14 17:43:07] Ep. 4 : Up. 19000 : Sen. 27,557,851 : Cost 0.49225405 : Time 495.04s : 251726.17 words/s : gNorm 0.6169 : L.r. 3.0000e-04
+[2025-06-14 17:47:08] Seen 30,682,259 samples
+[2025-06-14 17:47:08] Starting data epoch 5 in logical epoch 5
+[2025-06-14 17:47:08] [data] Shuffling data
+[2025-06-14 17:47:09] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 17:51:27] Ep. 5 : Up. 20000 : Sen. 3,096,281 : Cost 0.46400195 : Time 499.65s : 246056.71 words/s : gNorm 0.4944 : L.r. 3.0000e-04
+[2025-06-14 17:51:27] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 17:51:27] Saving Adam parameters
+[2025-06-14 17:51:27] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 17:51:47] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-14 17:51:47] [valid] Ep. 5 : Up. 20000 : perplexity : 3.17142 : new best
+[2025-06-14 17:54:58] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-14 17:54:59] [valid] Ep. 5 : Up. 20000 : chrf : 71.267 : new best
+[2025-06-14 17:55:16] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-14 17:55:16] [valid] Ep. 5 : Up. 20000 : ce-mean-words : 1.15418 : new best
+[2025-06-14 18:03:27] Ep. 5 : Up. 21000 : Sen. 9,398,752 : Cost 0.44673774 : Time 720.52s : 172024.99 words/s : gNorm 0.4781 : L.r. 3.0000e-04
+[2025-06-14 18:11:41] Ep. 5 : Up. 22000 : Sen. 15,757,385 : Cost 0.43008325 : Time 494.07s : 250745.24 words/s : gNorm 0.4910 : L.r. 3.0000e-04
+[2025-06-14 18:19:54] Ep. 5 : Up. 23000 : Sen. 22,003,888 : Cost 0.41917723 : Time 492.64s : 252007.15 words/s : gNorm 0.4826 : L.r. 3.0000e-04
+[2025-06-14 18:28:13] Ep. 5 : Up. 24000 : Sen. 28,368,573 : Cost 0.40615240 : Time 499.34s : 250327.49 words/s : gNorm 0.4565 : L.r. 3.0000e-04
+[2025-06-14 18:31:11] Seen 30,682,259 samples
+[2025-06-14 18:31:11] Starting data epoch 6 in logical epoch 6
+[2025-06-14 18:31:11] [data] Shuffling data
+[2025-06-14 18:31:13] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 18:36:28] Ep. 6 : Up. 25000 : Sen. 3,862,253 : Cost 0.39301428 : Time 494.70s : 247348.19 words/s : gNorm 0.4323 : L.r. 3.0000e-04
+[2025-06-14 18:36:28] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 18:36:28] Saving Adam parameters
+[2025-06-14 18:36:29] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 18:36:47] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-14 18:36:48] [valid] Ep. 6 : Up. 25000 : perplexity : 2.97307 : new best
+[2025-06-14 18:39:58] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-14 18:39:58] [valid] Ep. 6 : Up. 25000 : chrf : 71.6879 : new best
+[2025-06-14 18:40:16] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-14 18:40:16] [valid] Ep. 6 : Up. 25000 : ce-mean-words : 1.0896 : new best
+[2025-06-14 18:48:30] Ep. 6 : Up. 26000 : Sen. 10,163,014 : Cost 0.38454193 : Time 722.24s : 171833.89 words/s : gNorm 0.4704 : L.r. 3.0000e-04
+[2025-06-14 18:56:43] Ep. 6 : Up. 27000 : Sen. 16,508,288 : Cost 0.37470719 : Time 493.11s : 252615.68 words/s : gNorm 0.3519 : L.r. 3.0000e-04
+[2025-06-14 19:04:55] Ep. 6 : Up. 28000 : Sen. 22,755,189 : Cost 0.37127882 : Time 492.04s : 251113.99 words/s : gNorm 0.3905 : L.r. 3.0000e-04
+[2025-06-14 19:13:11] Ep. 6 : Up. 29000 : Sen. 29,075,386 : Cost 0.36535770 : Time 495.33s : 250145.80 words/s : gNorm 0.3722 : L.r. 3.0000e-04
+[2025-06-14 19:15:12] Seen 30,682,259 samples
+[2025-06-14 19:15:12] Starting data epoch 7 in logical epoch 7
+[2025-06-14 19:15:12] [data] Shuffling data
+[2025-06-14 19:15:14] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 19:21:31] Ep. 7 : Up. 30000 : Sen. 4,698,107 : Cost 0.35561079 : Time 499.75s : 246644.66 words/s : gNorm 0.4173 : L.r. 3.0000e-04
+[2025-06-14 19:21:31] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 19:21:31] Saving Adam parameters
+[2025-06-14 19:21:31] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 19:21:49] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-14 19:21:49] [valid] Ep. 7 : Up. 30000 : perplexity : 2.8681 : new best
+[2025-06-14 19:25:01] [valid] Ep. 7 : Up. 30000 : chrf : 71.5763 : stalled 1 times (last best: 71.6879)
+[2025-06-14 19:25:19] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-14 19:25:19] [valid] Ep. 7 : Up. 30000 : ce-mean-words : 1.05365 : new best
+[2025-06-14 19:33:33] Ep. 7 : Up. 31000 : Sen. 10,986,546 : Cost 0.35115856 : Time 722.82s : 172090.30 words/s : gNorm 0.3378 : L.r. 3.0000e-04
+[2025-06-14 19:41:50] Ep. 7 : Up. 32000 : Sen. 17,253,658 : Cost 0.34761027 : Time 496.17s : 248790.14 words/s : gNorm 0.3449 : L.r. 3.0000e-04
+[2025-06-14 19:50:03] Ep. 7 : Up. 33000 : Sen. 23,537,998 : Cost 0.34367797 : Time 493.04s : 251278.66 words/s : gNorm 0.3461 : L.r. 2.9542e-04
+[2025-06-14 19:58:16] Ep. 7 : Up. 34000 : Sen. 29,858,215 : Cost 0.33725485 : Time 493.27s : 252526.65 words/s : gNorm 0.3342 : L.r. 2.9104e-04
+[2025-06-14 19:59:19] Seen 30,682,259 samples
+[2025-06-14 19:59:19] Starting data epoch 8 in logical epoch 8
+[2025-06-14 19:59:19] [data] Shuffling data
+[2025-06-14 19:59:21] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 20:06:38] Ep. 8 : Up. 35000 : Sen. 5,438,296 : Cost 0.32773691 : Time 502.08s : 245698.49 words/s : gNorm 0.3157 : L.r. 2.8685e-04
+[2025-06-14 20:06:38] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 20:06:38] Saving Adam parameters
+[2025-06-14 20:06:39] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 20:06:57] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-14 20:06:57] [valid] Ep. 8 : Up. 35000 : perplexity : 2.77665 : new best
+[2025-06-14 20:10:07] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-14 20:10:07] [valid] Ep. 8 : Up. 35000 : chrf : 72.1896 : new best
+[2025-06-14 20:10:25] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-14 20:10:25] [valid] Ep. 8 : Up. 35000 : ce-mean-words : 1.02125 : new best
+[2025-06-14 20:18:41] Ep. 8 : Up. 36000 : Sen. 11,727,908 : Cost 0.32622644 : Time 723.15s : 172192.36 words/s : gNorm 0.2934 : L.r. 2.8284e-04
+[2025-06-14 20:26:58] Ep. 8 : Up. 37000 : Sen. 18,088,071 : Cost 0.32334369 : Time 497.32s : 249446.04 words/s : gNorm 0.3198 : L.r. 2.7899e-04
+[2025-06-14 20:35:09] Ep. 8 : Up. 38000 : Sen. 24,303,449 : Cost 0.32258171 : Time 490.23s : 252026.97 words/s : gNorm 0.2950 : L.r. 2.7530e-04
+[2025-06-14 20:43:15] Ep. 8 : Up. 39000 : Sen. 30,568,677 : Cost 0.31862587 : Time 486.05s : 252956.84 words/s : gNorm 0.3012 : L.r. 2.7175e-04
+[2025-06-14 20:43:23] Seen 30,682,259 samples
+[2025-06-14 20:43:23] Starting data epoch 9 in logical epoch 9
+[2025-06-14 20:43:23] [data] Shuffling data
+[2025-06-14 20:43:25] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 20:51:41] Ep. 9 : Up. 40000 : Sen. 6,184,670 : Cost 0.30955586 : Time 506.11s : 244898.03 words/s : gNorm 0.2949 : L.r. 2.6833e-04
+[2025-06-14 20:51:41] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 20:51:41] Saving Adam parameters
+[2025-06-14 20:51:41] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 20:52:00] [valid] Ep. 9 : Up. 40000 : perplexity : 2.82378 : stalled 1 times (last best: 2.77665)
+[2025-06-14 20:55:13] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-14 20:55:13] [valid] Ep. 9 : Up. 40000 : chrf : 72.7544 : new best
+[2025-06-14 20:55:31] [valid] Ep. 9 : Up. 40000 : ce-mean-words : 1.03808 : stalled 1 times (last best: 1.02125)
+[2025-06-14 21:03:45] Ep. 9 : Up. 41000 : Sen. 12,557,122 : Cost 0.30828291 : Time 724.31s : 172195.65 words/s : gNorm 0.3037 : L.r. 2.6504e-04
+[2025-06-14 21:11:58] Ep. 9 : Up. 42000 : Sen. 18,808,707 : Cost 0.30803081 : Time 492.40s : 251211.74 words/s : gNorm 0.3507 : L.r. 2.6186e-04
+[2025-06-14 21:20:16] Ep. 9 : Up. 43000 : Sen. 25,179,049 : Cost 0.30628920 : Time 498.41s : 250808.92 words/s : gNorm 0.3001 : L.r. 2.5880e-04
+[2025-06-14 21:27:27] Seen 30,682,259 samples
+[2025-06-14 21:27:27] Starting data epoch 10 in logical epoch 10
+[2025-06-14 21:27:27] [data] Shuffling data
+[2025-06-14 21:27:29] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 21:28:32] Ep. 10 : Up. 44000 : Sen. 645,153 : Cost 0.30477238 : Time 496.15s : 246401.47 words/s : gNorm 0.2793 : L.r. 2.5584e-04
+[2025-06-14 21:36:50] Ep. 10 : Up. 45000 : Sen. 7,017,430 : Cost 0.29749155 : Time 497.34s : 251127.50 words/s : gNorm 0.2979 : L.r. 2.5298e-04
+[2025-06-14 21:36:50] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 21:36:51] Saving Adam parameters
+[2025-06-14 21:36:51] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 21:37:12] [valid] Ep. 10 : Up. 45000 : perplexity : 2.79357 : stalled 2 times (last best: 2.77665)
+[2025-06-14 21:40:23] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-14 21:40:23] [valid] Ep. 10 : Up. 45000 : chrf : 72.9236 : new best
+[2025-06-14 21:40:41] [valid] Ep. 10 : Up. 45000 : ce-mean-words : 1.02732 : stalled 2 times (last best: 1.02125)
+[2025-06-14 21:48:53] Ep. 10 : Up. 46000 : Sen. 13,336,283 : Cost 0.29629850 : Time 723.25s : 171260.19 words/s : gNorm 0.2892 : L.r. 2.5022e-04
+[2025-06-14 21:57:04] Ep. 10 : Up. 47000 : Sen. 19,606,679 : Cost 0.29635331 : Time 491.42s : 252115.30 words/s : gNorm 0.2680 : L.r. 2.4754e-04
+[2025-06-14 22:05:15] Ep. 10 : Up. 48000 : Sen. 25,895,522 : Cost 0.29522294 : Time 491.15s : 252352.77 words/s : gNorm 0.3041 : L.r. 2.4495e-04
+[2025-06-14 22:11:30] Seen 30,682,259 samples
+[2025-06-14 22:11:30] Starting data epoch 11 in logical epoch 11
+[2025-06-14 22:11:30] [data] Shuffling data
+[2025-06-14 22:11:32] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 22:13:37] Ep. 11 : Up. 49000 : Sen. 1,444,712 : Cost 0.29174328 : Time 501.60s : 245348.34 words/s : gNorm 0.2647 : L.r. 2.4244e-04
+[2025-06-14 22:21:49] Ep. 11 : Up. 50000 : Sen. 7,718,800 : Cost 0.28733382 : Time 492.07s : 251762.66 words/s : gNorm 0.2982 : L.r. 2.4000e-04
+[2025-06-14 22:21:49] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 22:21:50] Saving Adam parameters
+[2025-06-14 22:21:50] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 22:22:08] [valid] Ep. 11 : Up. 50000 : perplexity : 2.77874 : stalled 3 times (last best: 2.77665)
+[2025-06-14 22:25:19] [valid] Ep. 11 : Up. 50000 : chrf : 72.8421 : stalled 1 times (last best: 72.9236)
+[2025-06-14 22:25:36] [valid] Ep. 11 : Up. 50000 : ce-mean-words : 1.022 : stalled 3 times (last best: 1.02125)
+[2025-06-14 22:33:54] Ep. 11 : Up. 51000 : Sen. 14,081,623 : Cost 0.28714377 : Time 725.08s : 171601.10 words/s : gNorm 0.2838 : L.r. 2.3764e-04
+[2025-06-14 22:42:08] Ep. 11 : Up. 52000 : Sen. 20,358,314 : Cost 0.28772190 : Time 493.78s : 252173.88 words/s : gNorm 0.2591 : L.r. 2.3534e-04
+[2025-06-14 22:50:22] Ep. 11 : Up. 53000 : Sen. 26,679,342 : Cost 0.28621715 : Time 494.28s : 251999.63 words/s : gNorm 0.2631 : L.r. 2.3311e-04
+[2025-06-14 22:55:32] Seen 30,682,259 samples
+[2025-06-14 22:55:32] Starting data epoch 12 in logical epoch 12
+[2025-06-14 22:55:32] [data] Shuffling data
+[2025-06-14 22:55:33] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 22:58:41] Ep. 12 : Up. 54000 : Sen. 2,224,496 : Cost 0.28358635 : Time 498.55s : 244613.19 words/s : gNorm 0.2779 : L.r. 2.3094e-04
+[2025-06-14 23:06:52] Ep. 12 : Up. 55000 : Sen. 8,560,697 : Cost 0.27781093 : Time 491.41s : 253240.97 words/s : gNorm 0.2712 : L.r. 2.2883e-04
+[2025-06-14 23:06:52] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 23:06:53] Saving Adam parameters
+[2025-06-14 23:06:53] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 23:07:11] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-14 23:07:11] [valid] Ep. 12 : Up. 55000 : perplexity : 2.70096 : new best
+[2025-06-14 23:10:22] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-14 23:10:22] [valid] Ep. 12 : Up. 55000 : chrf : 73.0173 : new best
+[2025-06-14 23:10:40] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-14 23:10:40] [valid] Ep. 12 : Up. 55000 : ce-mean-words : 0.993608 : new best
+[2025-06-14 23:18:50] Ep. 12 : Up. 56000 : Sen. 14,750,322 : Cost 0.28157157 : Time 717.74s : 171515.39 words/s : gNorm 0.2622 : L.r. 2.2678e-04
+[2025-06-14 23:27:06] Ep. 12 : Up. 57000 : Sen. 21,092,854 : Cost 0.27958676 : Time 495.95s : 250442.62 words/s : gNorm 0.2648 : L.r. 2.2478e-04
+[2025-06-14 23:35:20] Ep. 12 : Up. 58000 : Sen. 27,372,061 : Cost 0.27947944 : Time 494.07s : 250900.11 words/s : gNorm 0.2697 : L.r. 2.2283e-04
+[2025-06-14 23:39:33] Seen 30,682,259 samples
+[2025-06-14 23:39:33] Starting data epoch 13 in logical epoch 13
+[2025-06-14 23:39:33] [data] Shuffling data
+[2025-06-14 23:39:35] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-14 23:43:36] Ep. 13 : Up. 59000 : Sen. 2,950,532 : Cost 0.27627948 : Time 496.11s : 247800.52 words/s : gNorm 0.2744 : L.r. 2.2094e-04
+[2025-06-14 23:51:54] Ep. 13 : Up. 60000 : Sen. 9,284,718 : Cost 0.27236220 : Time 497.47s : 249781.89 words/s : gNorm 0.2835 : L.r. 2.1909e-04
+[2025-06-14 23:51:54] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-14 23:51:54] Saving Adam parameters
+[2025-06-14 23:51:54] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-14 23:52:13] [valid] Ep. 13 : Up. 60000 : perplexity : 2.73863 : stalled 1 times (last best: 2.70096)
+[2025-06-14 23:55:24] [valid] Ep. 13 : Up. 60000 : chrf : 72.8678 : stalled 1 times (last best: 73.0173)
+[2025-06-14 23:55:41] [valid] Ep. 13 : Up. 60000 : ce-mean-words : 1.00746 : stalled 1 times (last best: 0.993608)
+[2025-06-15 00:03:53] Ep. 13 : Up. 61000 : Sen. 15,585,153 : Cost 0.27491945 : Time 719.55s : 172544.33 words/s : gNorm 0.2819 : L.r. 2.1729e-04
+[2025-06-15 00:12:09] Ep. 13 : Up. 62000 : Sen. 21,891,250 : Cost 0.27385601 : Time 496.08s : 250741.32 words/s : gNorm 0.2837 : L.r. 2.1553e-04
+[2025-06-15 00:20:27] Ep. 13 : Up. 63000 : Sen. 28,175,961 : Cost 0.27392644 : Time 497.59s : 249091.85 words/s : gNorm 0.2655 : L.r. 2.1381e-04
+[2025-06-15 00:23:38] Seen 30,682,259 samples
+[2025-06-15 00:23:38] Starting data epoch 14 in logical epoch 14
+[2025-06-15 00:23:38] [data] Shuffling data
+[2025-06-15 00:23:40] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 00:28:45] Ep. 14 : Up. 64000 : Sen. 3,783,396 : Cost 0.26906276 : Time 498.07s : 248288.71 words/s : gNorm 0.2813 : L.r. 2.1213e-04
+[2025-06-15 00:37:01] Ep. 14 : Up. 65000 : Sen. 10,064,890 : Cost 0.26721287 : Time 496.13s : 249883.95 words/s : gNorm 0.2722 : L.r. 2.1049e-04
+[2025-06-15 00:37:01] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 00:37:02] Saving Adam parameters
+[2025-06-15 00:37:02] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 00:37:20] [valid] Ep. 14 : Up. 65000 : perplexity : 2.72944 : stalled 2 times (last best: 2.70096)
+[2025-06-15 00:40:31] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-15 00:40:32] [valid] Ep. 14 : Up. 65000 : chrf : 73.1088 : new best
+[2025-06-15 00:40:49] [valid] Ep. 14 : Up. 65000 : ce-mean-words : 1.0041 : stalled 2 times (last best: 0.993608)
+[2025-06-15 00:49:02] Ep. 14 : Up. 66000 : Sen. 16,330,455 : Cost 0.26907387 : Time 720.96s : 172066.39 words/s : gNorm 0.2865 : L.r. 2.0889e-04
+[2025-06-15 00:57:16] Ep. 14 : Up. 67000 : Sen. 22,676,921 : Cost 0.26958054 : Time 494.06s : 252087.59 words/s : gNorm 0.2584 : L.r. 2.0733e-04
+[2025-06-15 01:05:30] Ep. 14 : Up. 68000 : Sen. 28,999,956 : Cost 0.26726297 : Time 493.20s : 251935.43 words/s : gNorm 0.2408 : L.r. 2.0580e-04
+[2025-06-15 01:07:39] Seen 30,682,259 samples
+[2025-06-15 01:07:39] Starting data epoch 15 in logical epoch 15
+[2025-06-15 01:07:39] [data] Shuffling data
+[2025-06-15 01:07:41] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 01:13:50] Ep. 15 : Up. 69000 : Sen. 4,574,752 : Cost 0.26309738 : Time 500.66s : 246082.84 words/s : gNorm 0.2593 : L.r. 2.0430e-04
+[2025-06-15 01:22:03] Ep. 15 : Up. 70000 : Sen. 10,887,677 : Cost 0.26355049 : Time 492.71s : 251154.23 words/s : gNorm 0.2441 : L.r. 2.0284e-04
+[2025-06-15 01:22:03] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 01:22:03] Saving Adam parameters
+[2025-06-15 01:22:03] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 01:22:22] [valid] Ep. 15 : Up. 70000 : perplexity : 2.72232 : stalled 3 times (last best: 2.70096)
+[2025-06-15 01:25:32] [valid] Ep. 15 : Up. 70000 : chrf : 72.9175 : stalled 1 times (last best: 73.1088)
+[2025-06-15 01:25:50] [valid] Ep. 15 : Up. 70000 : ce-mean-words : 1.00148 : stalled 3 times (last best: 0.993608)
+[2025-06-15 01:34:08] Ep. 15 : Up. 71000 : Sen. 17,184,957 : Cost 0.26468790 : Time 725.00s : 171430.94 words/s : gNorm 0.2674 : L.r. 2.0140e-04
+[2025-06-15 01:42:21] Ep. 15 : Up. 72000 : Sen. 23,473,855 : Cost 0.26451144 : Time 493.37s : 251733.64 words/s : gNorm 0.2642 : L.r. 2.0000e-04
+[2025-06-15 01:50:35] Ep. 15 : Up. 73000 : Sen. 29,818,814 : Cost 0.26350275 : Time 493.59s : 252877.12 words/s : gNorm 0.2505 : L.r. 1.9863e-04
+[2025-06-15 01:51:42] Seen 30,682,259 samples
+[2025-06-15 01:51:42] Starting data epoch 16 in logical epoch 16
+[2025-06-15 01:51:42] [data] Shuffling data
+[2025-06-15 01:51:44] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 01:58:55] Ep. 16 : Up. 74000 : Sen. 5,375,050 : Cost 0.26053894 : Time 500.55s : 245475.09 words/s : gNorm 0.2402 : L.r. 1.9728e-04
+[2025-06-15 02:07:07] Ep. 16 : Up. 75000 : Sen. 11,653,739 : Cost 0.25986278 : Time 491.86s : 250474.17 words/s : gNorm 0.3056 : L.r. 1.9596e-04
+[2025-06-15 02:07:07] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 02:07:08] Saving Adam parameters
+[2025-06-15 02:07:08] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 02:07:29] [valid] Ep. 16 : Up. 75000 : perplexity : 2.71978 : stalled 4 times (last best: 2.70096)
+[2025-06-15 02:10:40] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-15 02:10:40] [valid] Ep. 16 : Up. 75000 : chrf : 73.1413 : new best
+[2025-06-15 02:10:58] [valid] Ep. 16 : Up. 75000 : ce-mean-words : 1.00055 : stalled 4 times (last best: 0.993608)
+[2025-06-15 02:19:12] Ep. 16 : Up. 76000 : Sen. 17,960,086 : Cost 0.26083675 : Time 724.51s : 171919.86 words/s : gNorm 0.2614 : L.r. 1.9467e-04
+[2025-06-15 02:27:28] Ep. 16 : Up. 77000 : Sen. 24,224,244 : Cost 0.26059327 : Time 495.72s : 250320.99 words/s : gNorm 0.2682 : L.r. 1.9340e-04
+[2025-06-15 02:35:34] Ep. 16 : Up. 78000 : Sen. 30,500,240 : Cost 0.26057178 : Time 485.86s : 253563.63 words/s : gNorm 0.2533 : L.r. 1.9215e-04
+[2025-06-15 02:35:47] Seen 30,682,259 samples
+[2025-06-15 02:35:47] Starting data epoch 17 in logical epoch 17
+[2025-06-15 02:35:47] [data] Shuffling data
+[2025-06-15 02:35:48] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 02:43:56] Ep. 17 : Up. 79000 : Sen. 6,067,315 : Cost 0.25480297 : Time 502.30s : 245137.26 words/s : gNorm 0.2568 : L.r. 1.9093e-04
+[2025-06-15 02:52:11] Ep. 17 : Up. 80000 : Sen. 12,441,048 : Cost 0.25559068 : Time 495.54s : 251576.13 words/s : gNorm 0.2493 : L.r. 1.8974e-04
+[2025-06-15 02:52:11] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 02:52:12] Saving Adam parameters
+[2025-06-15 02:52:12] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 02:52:30] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-15 02:52:30] [valid] Ep. 17 : Up. 80000 : perplexity : 2.69494 : new best
+[2025-06-15 02:55:40] [valid] Ep. 17 : Up. 80000 : chrf : 72.9885 : stalled 1 times (last best: 73.1413)
+[2025-06-15 02:55:58] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-15 02:55:58] [valid] Ep. 17 : Up. 80000 : ce-mean-words : 0.991376 : new best
+[2025-06-15 03:04:11] Ep. 17 : Up. 81000 : Sen. 18,735,148 : Cost 0.25681004 : Time 719.94s : 172993.59 words/s : gNorm 0.2354 : L.r. 1.8856e-04
+[2025-06-15 03:12:22] Ep. 17 : Up. 82000 : Sen. 25,004,699 : Cost 0.25812712 : Time 490.85s : 251856.45 words/s : gNorm 0.2500 : L.r. 1.8741e-04
+[2025-06-15 03:19:46] Seen 30,682,259 samples
+[2025-06-15 03:19:46] Starting data epoch 18 in logical epoch 18
+[2025-06-15 03:19:46] [data] Shuffling data
+[2025-06-15 03:19:48] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 03:20:39] Ep. 18 : Up. 83000 : Sen. 487,029 : Cost 0.25796124 : Time 497.06s : 245361.29 words/s : gNorm 0.2606 : L.r. 1.8628e-04
+[2025-06-15 03:28:53] Ep. 18 : Up. 84000 : Sen. 6,844,385 : Cost 0.25064331 : Time 493.46s : 252435.36 words/s : gNorm 0.2641 : L.r. 1.8516e-04
+[2025-06-15 03:37:07] Ep. 18 : Up. 85000 : Sen. 13,108,812 : Cost 0.25363189 : Time 494.38s : 250391.91 words/s : gNorm 0.2651 : L.r. 1.8407e-04
+[2025-06-15 03:37:07] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 03:37:07] Saving Adam parameters
+[2025-06-15 03:37:08] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 03:37:26] [valid] Ep. 18 : Up. 85000 : perplexity : 2.72393 : stalled 1 times (last best: 2.69494)
+[2025-06-15 03:40:36] [valid] Ep. 18 : Up. 85000 : chrf : 73.115 : stalled 2 times (last best: 73.1413)
+[2025-06-15 03:40:54] [valid] Ep. 18 : Up. 85000 : ce-mean-words : 1.00208 : stalled 1 times (last best: 0.991376)
+[2025-06-15 03:49:07] Ep. 18 : Up. 86000 : Sen. 19,515,881 : Cost 0.25350717 : Time 719.85s : 172495.38 words/s : gNorm 0.2687 : L.r. 1.8300e-04
+[2025-06-15 03:57:19] Ep. 18 : Up. 87000 : Sen. 25,695,172 : Cost 0.25519437 : Time 492.04s : 251678.71 words/s : gNorm 0.2676 : L.r. 1.8194e-04
+[2025-06-15 04:03:44] Seen 30,682,259 samples
+[2025-06-15 04:03:44] Starting data epoch 19 in logical epoch 19
+[2025-06-15 04:03:44] [data] Shuffling data
+[2025-06-15 04:03:46] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 04:05:41] Ep. 19 : Up. 88000 : Sen. 1,265,723 : Cost 0.25426665 : Time 501.73s : 245692.78 words/s : gNorm 0.2447 : L.r. 1.8091e-04
+[2025-06-15 04:13:56] Ep. 19 : Up. 89000 : Sen. 7,599,335 : Cost 0.24806067 : Time 495.57s : 251790.46 words/s : gNorm 0.2358 : L.r. 1.7989e-04
+[2025-06-15 04:22:09] Ep. 19 : Up. 90000 : Sen. 13,949,445 : Cost 0.25090748 : Time 492.49s : 252331.40 words/s : gNorm 0.2545 : L.r. 1.7889e-04
+[2025-06-15 04:22:09] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 04:22:09] Saving Adam parameters
+[2025-06-15 04:22:09] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 04:22:27] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-15 04:22:27] [valid] Ep. 19 : Up. 90000 : perplexity : 2.6803 : new best
+[2025-06-15 04:25:38] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-15 04:25:39] [valid] Ep. 19 : Up. 90000 : chrf : 73.1473 : new best
+[2025-06-15 04:25:56] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-15 04:25:57] [valid] Ep. 19 : Up. 90000 : ce-mean-words : 0.98593 : new best
+[2025-06-15 04:34:10] Ep. 19 : Up. 91000 : Sen. 20,222,079 : Cost 0.25202447 : Time 721.61s : 171067.91 words/s : gNorm 0.2377 : L.r. 1.7790e-04
+[2025-06-15 04:42:21] Ep. 19 : Up. 92000 : Sen. 26,472,601 : Cost 0.25182143 : Time 490.30s : 252379.01 words/s : gNorm 0.2416 : L.r. 1.7693e-04
+[2025-06-15 04:47:46] Seen 30,682,259 samples
+[2025-06-15 04:47:46] Starting data epoch 20 in logical epoch 20
+[2025-06-15 04:47:46] [data] Shuffling data
+[2025-06-15 04:47:48] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 04:50:42] Ep. 20 : Up. 93000 : Sen. 2,070,048 : Cost 0.25021076 : Time 500.99s : 245615.59 words/s : gNorm 0.2481 : L.r. 1.7598e-04
+[2025-06-15 04:58:54] Ep. 20 : Up. 94000 : Sen. 8,384,344 : Cost 0.24683017 : Time 492.35s : 251599.45 words/s : gNorm 0.2639 : L.r. 1.7504e-04
+[2025-06-15 05:07:05] Ep. 20 : Up. 95000 : Sen. 14,626,830 : Cost 0.24851473 : Time 491.14s : 252173.43 words/s : gNorm 0.3207 : L.r. 1.7411e-04
+[2025-06-15 05:07:05] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 05:07:05] Saving Adam parameters
+[2025-06-15 05:07:06] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 05:07:27] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-15 05:07:27] [valid] Ep. 20 : Up. 95000 : perplexity : 2.67211 : new best
+[2025-06-15 05:10:40] [valid] Ep. 20 : Up. 95000 : chrf : 73.0549 : stalled 1 times (last best: 73.1473)
+[2025-06-15 05:10:57] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-15 05:10:57] [valid] Ep. 20 : Up. 95000 : ce-mean-words : 0.982868 : new best
+[2025-06-15 05:19:11] Ep. 20 : Up. 96000 : Sen. 20,921,777 : Cost 0.24954903 : Time 725.56s : 170612.43 words/s : gNorm 0.2629 : L.r. 1.7321e-04
+[2025-06-15 05:27:29] Ep. 20 : Up. 97000 : Sen. 27,218,701 : Cost 0.24965279 : Time 497.97s : 249437.91 words/s : gNorm 0.2327 : L.r. 1.7231e-04
+[2025-06-15 05:31:54] Seen 30,682,259 samples
+[2025-06-15 05:31:54] Starting data epoch 21 in logical epoch 21
+[2025-06-15 05:31:54] [data] Shuffling data
+[2025-06-15 05:31:56] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 05:35:46] Ep. 21 : Up. 98000 : Sen. 2,786,961 : Cost 0.24639490 : Time 497.70s : 247864.61 words/s : gNorm 0.2435 : L.r. 1.7143e-04
+[2025-06-15 05:44:01] Ep. 21 : Up. 99000 : Sen. 9,107,057 : Cost 0.24517252 : Time 494.87s : 250481.98 words/s : gNorm 0.2550 : L.r. 1.7056e-04
+[2025-06-15 05:52:12] Ep. 21 : Up. 100000 : Sen. 15,378,217 : Cost 0.24569336 : Time 491.05s : 252048.12 words/s : gNorm 0.2518 : L.r. 1.6971e-04
+[2025-06-15 05:52:12] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 05:52:13] Saving Adam parameters
+[2025-06-15 05:52:13] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 05:52:31] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-perplexity.npz
+[2025-06-15 05:52:31] [valid] Ep. 21 : Up. 100000 : perplexity : 2.66763 : new best
+[2025-06-15 05:55:42] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-15 05:55:42] [valid] Ep. 21 : Up. 100000 : chrf : 73.1553 : new best
+[2025-06-15 05:55:59] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-ce-mean-words.npz
+[2025-06-15 05:55:59] [valid] Ep. 21 : Up. 100000 : ce-mean-words : 0.981192 : new best
+[2025-06-15 06:04:13] Ep. 21 : Up. 101000 : Sen. 21,741,339 : Cost 0.24714305 : Time 720.45s : 172649.16 words/s : gNorm 0.2424 : L.r. 1.6886e-04
+[2025-06-15 06:12:26] Ep. 21 : Up. 102000 : Sen. 28,030,096 : Cost 0.24708211 : Time 493.48s : 251876.76 words/s : gNorm 0.2635 : L.r. 1.6803e-04
+[2025-06-15 06:15:53] Seen 30,682,259 samples
+[2025-06-15 06:15:53] Starting data epoch 22 in logical epoch 22
+[2025-06-15 06:15:53] [data] Shuffling data
+[2025-06-15 06:15:54] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 06:20:41] Ep. 22 : Up. 103000 : Sen. 3,579,150 : Cost 0.24488978 : Time 495.05s : 246486.67 words/s : gNorm 0.2535 : L.r. 1.6722e-04
+[2025-06-15 06:28:55] Ep. 22 : Up. 104000 : Sen. 9,855,022 : Cost 0.24301426 : Time 493.90s : 251702.50 words/s : gNorm 0.2556 : L.r. 1.6641e-04
+[2025-06-15 06:37:12] Ep. 22 : Up. 105000 : Sen. 16,205,484 : Cost 0.24340591 : Time 496.58s : 250972.60 words/s : gNorm 0.2556 : L.r. 1.6562e-04
+[2025-06-15 06:37:12] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 06:37:12] Saving Adam parameters
+[2025-06-15 06:37:12] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 06:37:31] [valid] Ep. 22 : Up. 105000 : perplexity : 2.67349 : stalled 1 times (last best: 2.66763)
+[2025-06-15 06:40:40] [valid] Ep. 22 : Up. 105000 : chrf : 72.9073 : stalled 1 times (last best: 73.1553)
+[2025-06-15 06:40:58] [valid] Ep. 22 : Up. 105000 : ce-mean-words : 0.983385 : stalled 1 times (last best: 0.981192)
+[2025-06-15 06:49:09] Ep. 22 : Up. 106000 : Sen. 22,439,617 : Cost 0.24482414 : Time 717.21s : 172807.69 words/s : gNorm 0.2443 : L.r. 1.6483e-04
+[2025-06-15 06:57:25] Ep. 22 : Up. 107000 : Sen. 28,800,085 : Cost 0.24554023 : Time 495.94s : 250882.29 words/s : gNorm 0.2424 : L.r. 1.6406e-04
+[2025-06-15 06:59:52] Seen 30,682,259 samples
+[2025-06-15 06:59:52] Starting data epoch 23 in logical epoch 23
+[2025-06-15 06:59:52] [data] Shuffling data
+[2025-06-15 06:59:53] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 07:05:46] Ep. 23 : Up. 108000 : Sen. 4,377,244 : Cost 0.24161214 : Time 500.79s : 245536.56 words/s : gNorm 0.2524 : L.r. 1.6330e-04
+[2025-06-15 07:13:58] Ep. 23 : Up. 109000 : Sen. 10,680,105 : Cost 0.24189894 : Time 491.86s : 252704.75 words/s : gNorm 0.2466 : L.r. 1.6255e-04
+[2025-06-15 07:22:10] Ep. 23 : Up. 110000 : Sen. 16,964,489 : Cost 0.24278662 : Time 492.60s : 251922.28 words/s : gNorm 0.2496 : L.r. 1.6181e-04
+[2025-06-15 07:22:10] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 07:22:11] Saving Adam parameters
+[2025-06-15 07:22:11] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 07:22:30] [valid] Ep. 23 : Up. 110000 : perplexity : 2.69823 : stalled 2 times (last best: 2.66763)
+[2025-06-15 07:25:40] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-15 07:25:40] [valid] Ep. 23 : Up. 110000 : chrf : 73.1829 : new best
+[2025-06-15 07:25:58] [valid] Ep. 23 : Up. 110000 : ce-mean-words : 0.992596 : stalled 2 times (last best: 0.981192)
+[2025-06-15 07:34:12] Ep. 23 : Up. 111000 : Sen. 23,272,084 : Cost 0.24367657 : Time 721.83s : 171248.36 words/s : gNorm 0.2701 : L.r. 1.6108e-04
+[2025-06-15 07:42:26] Ep. 23 : Up. 112000 : Sen. 29,551,689 : Cost 0.24361102 : Time 493.41s : 251965.57 words/s : gNorm 0.2461 : L.r. 1.6036e-04
+[2025-06-15 07:43:52] Seen 30,682,259 samples
+[2025-06-15 07:43:52] Starting data epoch 24 in logical epoch 24
+[2025-06-15 07:43:52] [data] Shuffling data
+[2025-06-15 07:43:54] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 07:50:46] Ep. 24 : Up. 113000 : Sen. 5,095,985 : Cost 0.23938993 : Time 500.60s : 245497.83 words/s : gNorm 0.2355 : L.r. 1.5965e-04
+[2025-06-15 07:58:59] Ep. 24 : Up. 114000 : Sen. 11,366,047 : Cost 0.23943441 : Time 492.55s : 252228.58 words/s : gNorm 0.2375 : L.r. 1.5894e-04
+[2025-06-15 08:07:11] Ep. 24 : Up. 115000 : Sen. 17,698,751 : Cost 0.24129967 : Time 491.81s : 251867.30 words/s : gNorm 0.2329 : L.r. 1.5825e-04
+[2025-06-15 08:07:11] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 08:07:11] Saving Adam parameters
+[2025-06-15 08:07:11] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 08:07:29] [valid] Ep. 24 : Up. 115000 : perplexity : 2.68484 : stalled 3 times (last best: 2.66763)
+[2025-06-15 08:10:40] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-15 08:10:40] [valid] Ep. 24 : Up. 115000 : chrf : 73.1883 : new best
+[2025-06-15 08:10:57] [valid] Ep. 24 : Up. 115000 : ce-mean-words : 0.987621 : stalled 3 times (last best: 0.981192)
+[2025-06-15 08:19:11] Ep. 24 : Up. 116000 : Sen. 24,002,919 : Cost 0.24207868 : Time 720.21s : 172234.06 words/s : gNorm 0.2482 : L.r. 1.5757e-04
+[2025-06-15 08:27:18] Ep. 24 : Up. 117000 : Sen. 30,230,971 : Cost 0.24261706 : Time 487.47s : 252116.41 words/s : gNorm 0.2461 : L.r. 1.5689e-04
+[2025-06-15 08:27:52] Seen 30,682,259 samples
+[2025-06-15 08:27:52] Starting data epoch 25 in logical epoch 25
+[2025-06-15 08:27:52] [data] Shuffling data
+[2025-06-15 08:27:54] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 08:35:40] Ep. 25 : Up. 118000 : Sen. 5,840,711 : Cost 0.23680720 : Time 501.27s : 246157.40 words/s : gNorm 0.2700 : L.r. 1.5623e-04
+[2025-06-15 08:43:58] Ep. 25 : Up. 119000 : Sen. 12,154,287 : Cost 0.23812149 : Time 498.62s : 249720.35 words/s : gNorm 0.2414 : L.r. 1.5557e-04
+[2025-06-15 08:52:10] Ep. 25 : Up. 120000 : Sen. 18,479,703 : Cost 0.23933761 : Time 491.54s : 252028.53 words/s : gNorm 0.2548 : L.r. 1.5492e-04
+[2025-06-15 08:52:10] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 08:52:10] Saving Adam parameters
+[2025-06-15 08:52:10] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 08:52:29] [valid] Ep. 25 : Up. 120000 : perplexity : 2.67251 : stalled 4 times (last best: 2.66763)
+[2025-06-15 08:55:40] [valid] Ep. 25 : Up. 120000 : chrf : 73.1018 : stalled 1 times (last best: 73.1883)
+[2025-06-15 08:55:57] [valid] Ep. 25 : Up. 120000 : ce-mean-words : 0.98302 : stalled 4 times (last best: 0.981192)
+[2025-06-15 09:04:10] Ep. 25 : Up. 121000 : Sen. 24,750,078 : Cost 0.24122085 : Time 720.44s : 172289.27 words/s : gNorm 0.2430 : L.r. 1.5428e-04
+[2025-06-15 09:11:57] Seen 30,682,259 samples
+[2025-06-15 09:11:57] Starting data epoch 26 in logical epoch 26
+[2025-06-15 09:11:57] [data] Shuffling data
+[2025-06-15 09:11:59] [data] Done shuffling 30,682,309 sentences (cached in RAM)
+[2025-06-15 09:12:35] Ep. 26 : Up. 122000 : Sen. 289,435 : Cost 0.24102181 : Time 504.40s : 243610.80 words/s : gNorm 0.2524 : L.r. 1.5364e-04
+[2025-06-15 09:20:48] Ep. 26 : Up. 123000 : Sen. 6,531,125 : Cost 0.23434541 : Time 493.09s : 252179.82 words/s : gNorm 0.2362 : L.r. 1.5302e-04
+[2025-06-15 09:29:02] Ep. 26 : Up. 124000 : Sen. 12,941,655 : Cost 0.23671237 : Time 494.36s : 251484.64 words/s : gNorm 0.2288 : L.r. 1.5240e-04
+[2025-06-15 09:37:19] Ep. 26 : Up. 125000 : Sen. 19,238,455 : Cost 0.23801467 : Time 496.60s : 249758.73 words/s : gNorm 0.2650 : L.r. 1.5179e-04
+[2025-06-15 09:37:19] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 09:37:20] Saving Adam parameters
+[2025-06-15 09:37:20] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz
+[2025-06-15 09:37:39] [valid] Ep. 26 : Up. 125000 : perplexity : 2.68334 : stalled 5 times (last best: 2.66763)
+[2025-06-15 09:40:49] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.best-chrf.npz
+[2025-06-15 09:40:49] [valid] Ep. 26 : Up. 125000 : chrf : 73.2399 : new best
+[2025-06-15 09:41:07] [valid] Ep. 26 : Up. 125000 : ce-mean-words : 0.987063 : stalled 5 times (last best: 0.981192)
+[2025-06-15 09:41:07] Training finished
+[2025-06-15 09:41:07] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz
+[2025-06-15 09:41:07] Saving Adam parameters
+[2025-06-15 09:41:08] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/mul-mul/model5_tiny_student/model.npz.optimizer.npz

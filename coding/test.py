@@ -8,6 +8,10 @@ import os
 
 import statistics as stats
 
+import re
+from datetime import datetime
+from datetime import timedelta
+
 def find_empty_preds():
 
     models = ["baseline2021", "baseline2023"]
@@ -40,6 +44,7 @@ def rename_preds():
                     os.rename(f"{filepath}/{fileset}/{fileset}_transformer_{model}.en", f"{filepath}/{fileset}/{fileset}_transformer_{model}.txt")
             print(f"Done with {iterator} of 5", end="\r") 
 
+
 def find_good_sentences():
     file_dir = "data/4_Spanglish_Hinglish/mt_spanglisheng/test.txt"
 
@@ -71,47 +76,67 @@ def show_scored_sentences(ranked_bool):
 
     print(sentences.sort_values("SentenceID", axis = 0)[:55])
 
-def package_predictions():
-    #models = ["cat+oci+spa-eng", "mul-mul", "defps-mul"]
-    models = ["baseline2021", "baseline2023"]
-    #models = ["cat+oci+spa-eng"]
 
-    #iterate through prediction files
-    for model in models:
-        for model_num in range (5):
-
-            #get file path and renamed file path
-            model_path = f"../Predictions_for_submission/Student_Predictions/{model}/{model}_transformer_tiny_model{model_num+1} - Copy.txt"
-            renamed_file = f"../Predictions_for_submission/Student_Predictions/{model}/mt_spanglish_eng.txt"
-
-            #rename file
-            if os.path.exists(model_path):
-                os.rename(model_path, renamed_file)
-
-                #check if renamed file exists
-                if os.path.exists(renamed_file):
-                    print("Zipping file!")
-
-                    #zip file in its own zip
-                    with ZipFile(f"../Predictions_for_submission/Student_Predictions/{model}/{model}_transformer_tiny_model{model_num+1}.zip", "w") as zippy:
-                        zippy.write(renamed_file)
-
-                        #check zip contents
-                        zippy.printdir()
-
-                #remove renamed file to avoid conflicts
-                #os.remove(renamed_file)
-            else: 
-                print("Files already zipped!")
-            break
-        print(f"Done with model {model}!")
 
 def calculate_time():
     times = input("Input sequence of times: ")
-
-
     times = [float(duration) for duration in times.split(",")]
     print(f"Median is {stats.median(times)}")
+
+
+
+def find_duplicate_train_sentences():
+
+    with open("../../train_set.source", mode ="r", encoding ="UTF-8") as file:
+        lines = file.readlines()
+    
+    print(f"Full length: {len(lines)}")
+    print(f"Deduplicated: {len(set(lines))}")
+
+    length = 0
+    for index, line in enumerate(set(lines)):
+        if len(line.split(" ")) > 3 and len(line.split(" ")) < 100:
+            length +=1
+        print(f"Sentence: {index}", end ="\r")
+    
+    print(f"\nWith Length Filter: {length}")
+
+
+
+def calculate_training_time():
+
+    models = ("baseline2021", "baseline2023", "cat+oci+spa-eng", "mul-mul", "defps-mul")
+    sizes = ("transformer", "transformer-tiny")
+
+    for model in models:
+        for size in sizes:
+            
+            for index in range(5):
+                with open(f"data/Times/{model}_{size}_{index+1}.log", mode = "r", encoding = "UTF-8") as file:
+                    training_times = []
+                    for line in file:
+                        if re.search(".*Training", line):
+                            training_times.append(re.sub("].*", "", line).replace('[','').strip("\n"))
+                starting_time = datetime.strptime(training_times[0], "%Y-%m-%d %H:%M:%S")
+                end_time = datetime.strptime(training_times[1], "%Y-%m-%d %H:%M:%S")
+                duration = end_time-starting_time
+                if index == 0:
+                    all_times = duration.total_seconds()
+                else:
+                    all_times= all_times +duration.total_seconds()
+                
+                print(f"Training time for {model}_{size}_{index+1}:")
+                print( f"Training from {starting_time} until {end_time}")
+                print(f"Training Duration: {duration}")
+
+            print(f"Average training time: {timedelta(seconds =all_times/5)} \n")
+
+
+            
+
+    
+
+
 
 
         
@@ -122,4 +147,6 @@ if __name__ == "__main__":
     #show_scored_sentences(True)
     #find_empty_preds()
     #package_predictions()
-    calculate_time()
+    #calculate_time()
+    #find_duplicate_train_sentences()
+    calculate_training_time()

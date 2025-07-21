@@ -1,0 +1,34 @@
+Sentence 8: comiendo mierda con cojones para hacer este paper 
+	-> Spa > Eng
+
+Sentence 21: I hate when people talk shit cuzs I drink si supieran ke sus hijos tan igual oh piores ha
+	-> Spa = Eng
+
+Sentence 72: I wish I was back in ValleHermoso right now walking around the plaza drinking a cold agua de melon de la michoacana
+	-> Spa < Eng
+
+Sentence 403: Tengo que ir a ver finding dory like ASAP
+	-> Spa > Eng
+
+Sentence 1053: pamela es mi spirit animal
+	-> Spa > Eng
+
+Sentence 1110: Que me toque una persona lenta al frente en la Ramírez de Arellano está en mis top 3 worst things in life
+	-> Spa > Eng
+
+Sentence 1216: Marlenesita better not open tht in front of manny or her dad si no me mato lol
+	-> Spa < Eng
+
+Sentence 1507: Kuzs I mean nomas tengo like 1 month single
+	-> Spa < Eng
+
+Sentence 4727: Ramoncitos are cool too listen too un ratito y luego me acuerdo que son escuinkles y me artan hahahahhaa
+	-> Spa > Eng
+
+Sentence 4023: I love working with my sis only sometimes jaja cuando paga el lonche jkjk lmaoo
+	-> Spa = Eng
+
+Sentence 5047: When he called her a prostituta uggghhhh i just wanted to punch the fuck out of him !
+	-> Spa < Eng
+
+8, 1110, 21, 4023, 1216, 5047, 

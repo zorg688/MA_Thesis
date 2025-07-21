@@ -1,0 +1,597 @@
+[2025-04-03 11:56:16] [marian] Marian v1.12.31 a6ab8af8 2024-06-27 15:21:08 +0000
+[2025-04-03 11:56:16] [marian] Running on r02g07.bullx as process 23 with command line:
+[2025-04-03 11:56:16] [marian] /scratch/project_2011987/OpusDistillery/3rd_party/marian-dev/build//marian --model /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz -c configs/model/student.yml configs/training/student.train.yml --train-sets /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/cat+oci+spa-eng/filtered/corpus.source.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/cat+oci+spa-eng/filtered/corpus.target.gz -T /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/tmp --shuffle-in-ram --vocabs /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/vocab/vocab.spm /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/vocab/vocab.spm -w 10000 --devices 0 --sharding local --sync-sgd --valid-metrics perplexity chrf ce-mean-words --valid-sets /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/cat+oci+spa-eng/original/devset.student.source.gz /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/cat+oci+spa-eng/original/devset.student.target.gz --valid-translation-output '/scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/valid_outputs/validation-output-after-{U}-updates-{E}-epochs.txt' --quiet-translation --overwrite --keep-best --log /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/train.log --valid-log /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/valid.log
+[2025-04-03 11:56:17] [config] after: 0e
+[2025-04-03 11:56:17] [config] after-batches: 0
+[2025-04-03 11:56:17] [config] after-epochs: 0
+[2025-04-03 11:56:17] [config] all-caps-every: 0
+[2025-04-03 11:56:17] [config] allow-unk: false
+[2025-04-03 11:56:17] [config] authors: false
+[2025-04-03 11:56:17] [config] beam-size: 1
+[2025-04-03 11:56:17] [config] bert-class-symbol: "[CLS]"
+[2025-04-03 11:56:17] [config] bert-mask-symbol: "[MASK]"
+[2025-04-03 11:56:17] [config] bert-masking-fraction: 0.15
+[2025-04-03 11:56:17] [config] bert-sep-symbol: "[SEP]"
+[2025-04-03 11:56:17] [config] bert-train-type-embeddings: true
+[2025-04-03 11:56:17] [config] bert-type-vocab-size: 2
+[2025-04-03 11:56:17] [config] build-info: ""
+[2025-04-03 11:56:17] [config] check-gradient-nan: false
+[2025-04-03 11:56:17] [config] check-nan: false
+[2025-04-03 11:56:17] [config] cite: false
+[2025-04-03 11:56:17] [config] clip-norm: 0
+[2025-04-03 11:56:17] [config] comet-augment-bad: 0
+[2025-04-03 11:56:17] [config] comet-dropout: 0.1
+[2025-04-03 11:56:17] [config] comet-final-sigmoid: false
+[2025-04-03 11:56:17] [config] comet-mix: false
+[2025-04-03 11:56:17] [config] comet-mix-norm: false
+[2025-04-03 11:56:17] [config] comet-mix-transformation: softmax
+[2025-04-03 11:56:17] [config] comet-mixup: 0
+[2025-04-03 11:56:17] [config] comet-mixup-reg: false
+[2025-04-03 11:56:17] [config] comet-pool: avg
+[2025-04-03 11:56:17] [config] comet-pooler-ffn:
+[2025-04-03 11:56:17] [config]   - 2048
+[2025-04-03 11:56:17] [config]   - 1024
+[2025-04-03 11:56:17] [config] comet-prepend-zero: false
+[2025-04-03 11:56:17] [config] comet-stop-grad: false
+[2025-04-03 11:56:17] [config] comet-use-separator: false
+[2025-04-03 11:56:17] [config] cost-scaling:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] cost-type: ce-mean-words
+[2025-04-03 11:56:17] [config] cpu-threads: 0
+[2025-04-03 11:56:17] [config] custom-fallbacks:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] data-threads: 8
+[2025-04-03 11:56:17] [config] data-weighting: ""
+[2025-04-03 11:56:17] [config] data-weighting-type: sentence
+[2025-04-03 11:56:17] [config] dec-cell: gru
+[2025-04-03 11:56:17] [config] dec-cell-base-depth: 2
+[2025-04-03 11:56:17] [config] dec-cell-high-depth: 1
+[2025-04-03 11:56:17] [config] dec-depth: 6
+[2025-04-03 11:56:17] [config] devices:
+[2025-04-03 11:56:17] [config]   - 0
+[2025-04-03 11:56:17] [config] dim-emb: 512
+[2025-04-03 11:56:17] [config] dim-rnn: 1024
+[2025-04-03 11:56:17] [config] dim-vocabs:
+[2025-04-03 11:56:17] [config]   - 0
+[2025-04-03 11:56:17] [config]   - 0
+[2025-04-03 11:56:17] [config] disp-first: 10
+[2025-04-03 11:56:17] [config] disp-freq: 1000
+[2025-04-03 11:56:17] [config] disp-label-counts: true
+[2025-04-03 11:56:17] [config] dropout-rnn: 0.1
+[2025-04-03 11:56:17] [config] dropout-src: 0
+[2025-04-03 11:56:17] [config] dropout-trg: 0
+[2025-04-03 11:56:17] [config] dump-config: ""
+[2025-04-03 11:56:17] [config] dynamic-gradient-scaling:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] early-stopping: 5
+[2025-04-03 11:56:17] [config] early-stopping-epsilon:
+[2025-04-03 11:56:17] [config]   - 0
+[2025-04-03 11:56:17] [config] early-stopping-on: first
+[2025-04-03 11:56:17] [config] embedding-fix-src: false
+[2025-04-03 11:56:17] [config] embedding-fix-trg: false
+[2025-04-03 11:56:17] [config] embedding-normalization: false
+[2025-04-03 11:56:17] [config] embedding-vectors:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] enc-cell: gru
+[2025-04-03 11:56:17] [config] enc-cell-depth: 1
+[2025-04-03 11:56:17] [config] enc-depth: 6
+[2025-04-03 11:56:17] [config] enc-type: bidirectional
+[2025-04-03 11:56:17] [config] english-title-case-every: 0
+[2025-04-03 11:56:17] [config] exponential-smoothing: True
+[2025-04-03 11:56:17] [config] exponential-smoothing-replace-freq: 0
+[2025-04-03 11:56:17] [config] factor-weight: 1
+[2025-04-03 11:56:17] [config] factors-combine: sum
+[2025-04-03 11:56:17] [config] factors-dim-emb: 0
+[2025-04-03 11:56:17] [config] gradient-checkpointing: false
+[2025-04-03 11:56:17] [config] gradient-norm-average-window: 100
+[2025-04-03 11:56:17] [config] guided-alignment: none
+[2025-04-03 11:56:17] [config] guided-alignment-cost: ce
+[2025-04-03 11:56:17] [config] guided-alignment-weight: 0.1
+[2025-04-03 11:56:17] [config] ignore-model-config: false
+[2025-04-03 11:56:17] [config] input-join-fields: false
+[2025-04-03 11:56:17] [config] input-reorder:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] input-types:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] interpolate-env-vars: false
+[2025-04-03 11:56:17] [config] keep-best: true
+[2025-04-03 11:56:17] [config] label-smoothing: 0
+[2025-04-03 11:56:17] [config] layer-normalization: false
+[2025-04-03 11:56:17] [config] learn-rate: 0.0003
+[2025-04-03 11:56:17] [config] lemma-dependency: ""
+[2025-04-03 11:56:17] [config] lemma-dim-emb: 0
+[2025-04-03 11:56:17] [config] log: /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/train.log
+[2025-04-03 11:56:17] [config] log-level: info
+[2025-04-03 11:56:17] [config] log-time-zone: ""
+[2025-04-03 11:56:17] [config] logical-epoch:
+[2025-04-03 11:56:17] [config]   - 1e
+[2025-04-03 11:56:17] [config]   - 0
+[2025-04-03 11:56:17] [config] lr-decay: 0
+[2025-04-03 11:56:17] [config] lr-decay-freq: 50000
+[2025-04-03 11:56:17] [config] lr-decay-inv-sqrt:
+[2025-04-03 11:56:17] [config]   - 32000
+[2025-04-03 11:56:17] [config] lr-decay-repeat-warmup: false
+[2025-04-03 11:56:17] [config] lr-decay-reset-optimizer: false
+[2025-04-03 11:56:17] [config] lr-decay-start:
+[2025-04-03 11:56:17] [config]   - 10
+[2025-04-03 11:56:17] [config]   - 1
+[2025-04-03 11:56:17] [config] lr-decay-strategy: epoch+stalled
+[2025-04-03 11:56:17] [config] lr-report: True
+[2025-04-03 11:56:17] [config] lr-warmup: 16000
+[2025-04-03 11:56:17] [config] lr-warmup-at-reload: false
+[2025-04-03 11:56:17] [config] lr-warmup-cycle: false
+[2025-04-03 11:56:17] [config] lr-warmup-start-rate: 0
+[2025-04-03 11:56:17] [config] max-length: 200
+[2025-04-03 11:56:17] [config] max-length-crop: false
+[2025-04-03 11:56:17] [config] max-length-factor: 3
+[2025-04-03 11:56:17] [config] maxi-batch: 1000
+[2025-04-03 11:56:17] [config] maxi-batch-sort: trg
+[2025-04-03 11:56:17] [config] mini-batch: 1000
+[2025-04-03 11:56:17] [config] mini-batch-fit: True
+[2025-04-03 11:56:17] [config] mini-batch-fit-step: 10
+[2025-04-03 11:56:17] [config] mini-batch-round-up: true
+[2025-04-03 11:56:17] [config] mini-batch-track-lr: false
+[2025-04-03 11:56:17] [config] mini-batch-warmup: 0
+[2025-04-03 11:56:17] [config] mini-batch-words: 0
+[2025-04-03 11:56:17] [config] mini-batch-words-ref: 0
+[2025-04-03 11:56:17] [config] model: /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 11:56:17] [config] multi-loss-type: sum
+[2025-04-03 11:56:17] [config] n-best: false
+[2025-04-03 11:56:17] [config] no-nccl: false
+[2025-04-03 11:56:17] [config] no-optimizer-reload: false
+[2025-04-03 11:56:17] [config] no-reload: false
+[2025-04-03 11:56:17] [config] no-restore-corpus: false
+[2025-04-03 11:56:17] [config] no-spm-encode: false
+[2025-04-03 11:56:17] [config] normalize: 1
+[2025-04-03 11:56:17] [config] normalize-gradient: false
+[2025-04-03 11:56:17] [config] normalize-gradient-by-ratio: false
+[2025-04-03 11:56:17] [config] optimizer: adam
+[2025-04-03 11:56:17] [config] optimizer-delay: 2
+[2025-04-03 11:56:17] [config] optimizer-params:
+[2025-04-03 11:56:17] [config]   - 0.9
+[2025-04-03 11:56:17] [config]   - 0.98
+[2025-04-03 11:56:17] [config]   - 1e-09
+[2025-04-03 11:56:17] [config] output-omit-bias: false
+[2025-04-03 11:56:17] [config] overwrite: true
+[2025-04-03 11:56:17] [config] overwrite-checkpoint: true
+[2025-04-03 11:56:17] [config] precision:
+[2025-04-03 11:56:17] [config]   - float32
+[2025-04-03 11:56:17] [config]   - float32
+[2025-04-03 11:56:17] [config] pretrained-model: ""
+[2025-04-03 11:56:17] [config] quantize-biases: false
+[2025-04-03 11:56:17] [config] quantize-bits: 0
+[2025-04-03 11:56:17] [config] quantize-log-based: false
+[2025-04-03 11:56:17] [config] quantize-optimization-steps: 0
+[2025-04-03 11:56:17] [config] quiet: false
+[2025-04-03 11:56:17] [config] quiet-translation: true
+[2025-04-03 11:56:17] [config] quiet-validation: false
+[2025-04-03 11:56:17] [config] relative-paths: false
+[2025-04-03 11:56:17] [config] right-left: false
+[2025-04-03 11:56:17] [config] save-freq: 5000
+[2025-04-03 11:56:17] [config] seed: 0
+[2025-04-03 11:56:17] [config] sentencepiece-alphas:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] sentencepiece-max-lines: 2000000
+[2025-04-03 11:56:17] [config] sentencepiece-options: ""
+[2025-04-03 11:56:17] [config] separator-symbol: "[eos]"
+[2025-04-03 11:56:17] [config] sharding: local
+[2025-04-03 11:56:17] [config] shuffle: data
+[2025-04-03 11:56:17] [config] shuffle-in-ram: true
+[2025-04-03 11:56:17] [config] sigterm: save-and-exit
+[2025-04-03 11:56:17] [config] skip: false
+[2025-04-03 11:56:17] [config] sqlite: ""
+[2025-04-03 11:56:17] [config] sqlite-drop: false
+[2025-04-03 11:56:17] [config] sync-freq: 200u
+[2025-04-03 11:56:17] [config] sync-sgd: true
+[2025-04-03 11:56:17] [config] tempdir: /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/tmp
+[2025-04-03 11:56:17] [config] throw-on-divergence:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] tied-embeddings: false
+[2025-04-03 11:56:17] [config] tied-embeddings-all: true
+[2025-04-03 11:56:17] [config] tied-embeddings-src: false
+[2025-04-03 11:56:17] [config] train-embedder-rank:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] train-sets:
+[2025-04-03 11:56:17] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/cat+oci+spa-eng/filtered/corpus.source.gz
+[2025-04-03 11:56:17] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/cat+oci+spa-eng/filtered/corpus.target.gz
+[2025-04-03 11:56:17] [config] transformer-aan-activation: swish
+[2025-04-03 11:56:17] [config] transformer-aan-depth: 2
+[2025-04-03 11:56:17] [config] transformer-aan-nogate: false
+[2025-04-03 11:56:17] [config] transformer-alibi-shift: false
+[2025-04-03 11:56:17] [config] transformer-alibi-trainable: false
+[2025-04-03 11:56:17] [config] transformer-attention-mask: default
+[2025-04-03 11:56:17] [config] transformer-decoder-autoreg: rnn
+[2025-04-03 11:56:17] [config] transformer-decoder-dim-ffn: 0
+[2025-04-03 11:56:17] [config] transformer-decoder-ffn-depth: 0
+[2025-04-03 11:56:17] [config] transformer-depth-scaling: false
+[2025-04-03 11:56:17] [config] transformer-dim-aan: 2048
+[2025-04-03 11:56:17] [config] transformer-dim-ffn: 2048
+[2025-04-03 11:56:17] [config] transformer-disable-position-embeddings: false
+[2025-04-03 11:56:17] [config] transformer-dropout: 0
+[2025-04-03 11:56:17] [config] transformer-dropout-attention: 0
+[2025-04-03 11:56:17] [config] transformer-dropout-ffn: 0
+[2025-04-03 11:56:17] [config] transformer-ffn-activation: relu
+[2025-04-03 11:56:17] [config] transformer-ffn-depth: 2
+[2025-04-03 11:56:17] [config] transformer-guided-alignment-layer: last
+[2025-04-03 11:56:17] [config] transformer-heads: 8
+[2025-04-03 11:56:17] [config] transformer-no-affine: false
+[2025-04-03 11:56:17] [config] transformer-no-bias: false
+[2025-04-03 11:56:17] [config] transformer-no-projection: false
+[2025-04-03 11:56:17] [config] transformer-pool: false
+[2025-04-03 11:56:17] [config] transformer-postprocess: dan
+[2025-04-03 11:56:17] [config] transformer-postprocess-emb: d
+[2025-04-03 11:56:17] [config] transformer-postprocess-top: ""
+[2025-04-03 11:56:17] [config] transformer-preprocess: ""
+[2025-04-03 11:56:17] [config] transformer-rnn-projection: false
+[2025-04-03 11:56:17] [config] transformer-tied-layers:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] transformer-train-position-embeddings: false
+[2025-04-03 11:56:17] [config] tsv: false
+[2025-04-03 11:56:17] [config] tsv-fields: 0
+[2025-04-03 11:56:17] [config] type: transformer
+[2025-04-03 11:56:17] [config] ulr: false
+[2025-04-03 11:56:17] [config] ulr-dim-emb: 0
+[2025-04-03 11:56:17] [config] ulr-dropout: 0
+[2025-04-03 11:56:17] [config] ulr-keys-vectors: ""
+[2025-04-03 11:56:17] [config] ulr-query-vectors: ""
+[2025-04-03 11:56:17] [config] ulr-softmax-temperature: 1
+[2025-04-03 11:56:17] [config] ulr-trainable-transformation: false
+[2025-04-03 11:56:17] [config] unlikelihood-loss: false
+[2025-04-03 11:56:17] [config] valid-freq: 5000
+[2025-04-03 11:56:17] [config] valid-log: /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/valid.log
+[2025-04-03 11:56:17] [config] valid-max-length: 1000
+[2025-04-03 11:56:17] [config] valid-metrics:
+[2025-04-03 11:56:17] [config]   - perplexity
+[2025-04-03 11:56:17] [config]   - chrf
+[2025-04-03 11:56:17] [config]   - ce-mean-words
+[2025-04-03 11:56:17] [config] valid-mini-batch: 64
+[2025-04-03 11:56:17] [config] valid-reset-all: false
+[2025-04-03 11:56:17] [config] valid-reset-stalled: false
+[2025-04-03 11:56:17] [config] valid-script-args:
+[2025-04-03 11:56:17] [config]   []
+[2025-04-03 11:56:17] [config] valid-script-path: ""
+[2025-04-03 11:56:17] [config] valid-sets:
+[2025-04-03 11:56:17] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/cat+oci+spa-eng/original/devset.student.source.gz
+[2025-04-03 11:56:17] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/data/MA-test/cat+oci+spa-eng/original/devset.student.target.gz
+[2025-04-03 11:56:17] [config] valid-translation-output: /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/valid_outputs/validation-output-after-{U}-updates-{E}-epochs.txt
+[2025-04-03 11:56:17] [config] vocabs:
+[2025-04-03 11:56:17] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/vocab/vocab.spm
+[2025-04-03 11:56:17] [config]   - /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/vocab/vocab.spm
+[2025-04-03 11:56:17] [config] word-penalty: 0
+[2025-04-03 11:56:17] [config] word-scores: false
+[2025-04-03 11:56:17] [config] workspace: 10000
+[2025-04-03 11:56:17] [config] Model is being created with Marian v1.12.31 a6ab8af8 2024-06-27 15:21:08 +0000
+[2025-04-03 11:56:17] Using synchronous SGD
+[2025-04-03 11:56:17] [comm] Compiled without MPI support. Running as a single process on r02g07.bullx
+[2025-04-03 11:56:17] Synced seed 1743670576
+[2025-04-03 11:56:17] [data] Loading SentencePiece vocabulary from file /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/vocab/vocab.spm
+[2025-04-03 11:56:17] [data] Setting vocabulary size for input 0 to 32,000
+[2025-04-03 11:56:17] [data] Loading SentencePiece vocabulary from file /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/vocab/vocab.spm
+[2025-04-03 11:56:17] [data] Setting vocabulary size for input 1 to 32,000
+[2025-04-03 11:56:17] [batching] Collecting statistics for batch fitting with step size 10
+[2025-04-03 11:56:18] [memory] Extending reserved space to 10112 MB (device gpu0)
+[2025-04-03 11:56:22] [comm] Using NCCL 2.8.3 for GPU communication
+[2025-04-03 11:56:22] [comm] Using global sharding
+[2025-04-03 11:56:22] [comm] NCCLCommunicators constructed successfully
+[2025-04-03 11:56:22] [training] Using 1 GPUs
+[2025-04-03 11:56:23] [logits] Applying loss function for 1 factor(s)
+[2025-04-03 11:56:23] [memory] Reserving 242 MB, device gpu0
+[2025-04-03 11:56:25] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2025-04-03 11:56:25] [memory] Reserving 242 MB, device gpu0
+[2025-04-03 11:56:56] [batching] Done. Typical MB size is 20,733 target words
+[2025-04-03 11:56:56] [memory] Extending reserved space to 10112 MB (device gpu0)
+[2025-04-03 11:56:56] [comm] Using NCCL 2.8.3 for GPU communication
+[2025-04-03 11:56:56] [comm] Using global sharding
+[2025-04-03 11:56:56] [comm] NCCLCommunicators constructed successfully
+[2025-04-03 11:56:56] [training] Using 1 GPUs
+[2025-04-03 11:56:56] Training started
+[2025-04-03 11:56:56] [data] Shuffling data
+[2025-04-03 11:57:23] [data] Done reading 19,897,021 sentences
+[2025-04-03 11:57:24] [data] Done shuffling 19,897,021 sentences (cached in RAM)
+[2025-04-03 11:57:42] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2025-04-03 11:57:42] [memory] Reserving 242 MB, device gpu0
+[2025-04-03 11:57:42] [memory] Reserving 242 MB, device gpu0
+[2025-04-03 11:57:44] Parameter type float32, optimization type float32, casting types false
+[2025-04-03 11:57:44] Allocating memory for general optimizer shards
+[2025-04-03 11:57:44] [memory] Reserving 242 MB, device gpu0
+[2025-04-03 11:57:44] Allocating memory for Adam-specific shards
+[2025-04-03 11:57:44] [memory] Reserving 485 MB, device gpu0
+[2025-04-03 11:57:45] Ep. 1 : Up. 1 : Sen. 558 : Cost 10.76537800 : Time 48.39s : 392.04 words/s : gNorm 7.7501 : L.r. 1.8750e-08
+[2025-04-03 11:57:46] Ep. 1 : Up. 2 : Sen. 1,704 : Cost 10.81615353 : Time 1.28s : 8072.01 words/s : gNorm 9.2467 : L.r. 3.7500e-08
+[2025-04-03 11:57:48] Ep. 1 : Up. 3 : Sen. 4,028 : Cost 10.83255672 : Time 2.15s : 9734.70 words/s : gNorm 10.1604 : L.r. 5.6250e-08
+[2025-04-03 11:57:50] Ep. 1 : Up. 4 : Sen. 4,126 : Cost 10.80681038 : Time 2.11s : 4274.57 words/s : gNorm 9.1679 : L.r. 7.5000e-08
+[2025-04-03 11:57:52] Ep. 1 : Up. 5 : Sen. 4,360 : Cost 10.81052494 : Time 2.13s : 6149.01 words/s : gNorm 8.8733 : L.r. 9.3750e-08
+[2025-04-03 11:57:54] Ep. 1 : Up. 6 : Sen. 4,530 : Cost 10.75716782 : Time 2.23s : 5591.26 words/s : gNorm 8.6593 : L.r. 1.1250e-07
+[2025-04-03 11:57:56] Ep. 1 : Up. 7 : Sen. 5,676 : Cost 10.85841846 : Time 1.68s : 9539.22 words/s : gNorm 8.6922 : L.r. 1.3125e-07
+[2025-04-03 11:57:58] Ep. 1 : Up. 8 : Sen. 5,984 : Cost 10.76098919 : Time 1.57s : 10195.64 words/s : gNorm 8.4507 : L.r. 1.5000e-07
+[2025-04-03 11:57:58] Ep. 1 : Up. 9 : Sen. 6,542 : Cost 10.77402878 : Time 0.51s : 39181.18 words/s : gNorm 8.3234 : L.r. 1.6875e-07
+[2025-04-03 11:57:59] Ep. 1 : Up. 10 : Sen. 6,712 : Cost 10.76268005 : Time 0.35s : 26992.97 words/s : gNorm 8.2722 : L.r. 1.8750e-07
+[2025-04-03 12:04:58] Ep. 1 : Up. 1000 : Sen. 673,348 : Cost 8.04829693 : Time 419.66s : 38744.64 words/s : gNorm 3.3919 : L.r. 1.8750e-05
+[2025-04-03 12:12:15] Ep. 1 : Up. 2000 : Sen. 1,342,016 : Cost 6.31653404 : Time 436.99s : 37421.40 words/s : gNorm 3.9960 : L.r. 3.7500e-05
+[2025-04-03 12:19:33] Ep. 1 : Up. 3000 : Sen. 2,017,433 : Cost 5.55028772 : Time 438.21s : 37591.05 words/s : gNorm 3.0472 : L.r. 5.6250e-05
+[2025-04-03 12:26:38] Ep. 1 : Up. 4000 : Sen. 2,707,815 : Cost 4.78355551 : Time 424.20s : 38730.43 words/s : gNorm 4.0879 : L.r. 7.5000e-05
+[2025-04-03 12:33:42] Ep. 1 : Up. 5000 : Sen. 3,369,193 : Cost 3.77226949 : Time 424.54s : 38655.83 words/s : gNorm 4.4983 : L.r. 9.3750e-05
+[2025-04-03 12:33:42] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 12:33:43] Saving Adam parameters
+[2025-04-03 12:33:45] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 12:34:51] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 12:34:52] [valid] Ep. 1 : Up. 5000 : perplexity : 8.40084 : new best
+[2025-04-03 12:34:52] [valid] First sentence's tokens as scored:
+[2025-04-03 12:34:52] [valid] Decoding validation set with SentencePieceVocab for scoring
+[2025-04-03 12:34:52] [valid]   Hyp: A l i t t l e b i t a g o t h i s m o n t h , I r e c e i v e d a n e x t r a - o r d i n o r d i n e d e x t r a l y - o l d f a m i l i e s f r o m A f g h a n i s t a n . O u r I n t e r n a t i o n a l a n d h e s a i d i n t h i s c a m p a i g n . A n d h e ' s a l s o b r o u g h t t o t h e c o u n t r y a n d e v e n m o r e t h a n H e ' s m o s t i m p o r t a n t f o r t h e m o s t i m p o r t a n t o f t h e m .
+[2025-04-03 12:34:52] [valid]   Ref: A l i t t l e b i t e a r l i e r t h i s e v e n i n g , I r e c e i v e d a n e x t r a o r d i n a r i l y g r a c i o u s c a l l f r o m S e n a t o r M c C a i n . S e n a t o r M c C a i n f o u g h t l o n g a n d h a r d i n t h i s c a m p a i g n . A n d h e ' s f o u g h t e v e n l o n g e r a n d h a r d e r f o r t h e c o u n t r y t h a t h e l o v e s . H e h a s e n d u r e d s a c r i f i c e s f o r t h e U n i t e d S t a t e s t h a t m o s t o f u s c a n n o t b e g i n t o i m a g i n e . W e a r e b e t t e r o f f f o r t h e s e r v i c e r e n d e r e d b y t h i s b r a v e a n d s e l f l e s s l e a d e r .
+[2025-04-03 12:34:59] [valid] References contain unknown word, metric scores may be inaccurate
+[2025-04-03 12:42:14] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 12:42:15] [valid] Ep. 1 : Up. 5000 : chrf : 51.0888 : new best
+[2025-04-03 12:43:19] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 12:43:20] [valid] Ep. 1 : Up. 5000 : ce-mean-words : 2.12833 : new best
+[2025-04-03 12:50:33] Ep. 1 : Up. 6000 : Sen. 4,047,001 : Cost 2.75493169 : Time 1010.61s : 16383.50 words/s : gNorm 3.7537 : L.r. 1.1250e-04
+[2025-04-03 12:57:42] Ep. 1 : Up. 7000 : Sen. 4,715,116 : Cost 2.08502722 : Time 428.80s : 38204.00 words/s : gNorm 2.6410 : L.r. 1.3125e-04
+[2025-04-03 13:04:50] Ep. 1 : Up. 8000 : Sen. 5,390,104 : Cost 1.66704953 : Time 428.54s : 38319.98 words/s : gNorm 2.2761 : L.r. 1.5000e-04
+[2025-04-03 13:11:54] Ep. 1 : Up. 9000 : Sen. 6,074,179 : Cost 1.39552474 : Time 424.41s : 38704.94 words/s : gNorm 1.9570 : L.r. 1.6875e-04
+[2025-04-03 13:18:57] Ep. 1 : Up. 10000 : Sen. 6,746,585 : Cost 1.21207297 : Time 422.16s : 38651.78 words/s : gNorm 1.6519 : L.r. 1.8750e-04
+[2025-04-03 13:18:57] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 13:18:58] Saving Adam parameters
+[2025-04-03 13:18:59] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 13:20:06] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 13:20:07] [valid] Ep. 1 : Up. 10000 : perplexity : 3.57831 : new best
+[2025-04-03 13:27:11] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 13:27:12] [valid] Ep. 1 : Up. 10000 : chrf : 67.539 : new best
+[2025-04-03 13:28:17] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 13:28:18] [valid] Ep. 1 : Up. 10000 : ce-mean-words : 1.27489 : new best
+[2025-04-03 13:35:23] Ep. 1 : Up. 11000 : Sen. 7,432,634 : Cost 1.06795382 : Time 986.54s : 16769.87 words/s : gNorm 1.2566 : L.r. 2.0625e-04
+[2025-04-03 13:42:27] Ep. 1 : Up. 12000 : Sen. 8,103,711 : Cost 0.97689933 : Time 423.42s : 38704.86 words/s : gNorm 1.0330 : L.r. 2.2500e-04
+[2025-04-03 13:49:31] Ep. 1 : Up. 13000 : Sen. 8,783,570 : Cost 0.90327668 : Time 424.09s : 38565.92 words/s : gNorm 1.0010 : L.r. 2.4375e-04
+[2025-04-03 13:56:33] Ep. 1 : Up. 14000 : Sen. 9,451,880 : Cost 0.83852583 : Time 422.52s : 38847.96 words/s : gNorm 0.8727 : L.r. 2.6250e-04
+[2025-04-03 14:03:42] Ep. 1 : Up. 15000 : Sen. 10,103,060 : Cost 0.79939830 : Time 428.67s : 38375.15 words/s : gNorm 0.9044 : L.r. 2.8125e-04
+[2025-04-03 14:03:42] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 14:03:44] Saving Adam parameters
+[2025-04-03 14:03:44] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 14:04:51] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 14:04:52] [valid] Ep. 1 : Up. 15000 : perplexity : 2.75127 : new best
+[2025-04-03 14:12:00] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 14:12:00] [valid] Ep. 1 : Up. 15000 : chrf : 70.0182 : new best
+[2025-04-03 14:13:06] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 14:13:07] [valid] Ep. 1 : Up. 15000 : ce-mean-words : 1.01206 : new best
+[2025-04-03 14:20:08] Ep. 1 : Up. 16000 : Sen. 10,781,416 : Cost 0.75996149 : Time 985.85s : 16523.57 words/s : gNorm 0.7961 : L.r. 3.0000e-04
+[2025-04-03 14:27:16] Ep. 1 : Up. 17000 : Sen. 11,445,099 : Cost 0.71763754 : Time 428.28s : 38715.23 words/s : gNorm 0.7671 : L.r. 3.0000e-04
+[2025-04-03 14:34:16] Ep. 1 : Up. 18000 : Sen. 12,141,009 : Cost 0.68844718 : Time 420.13s : 38837.95 words/s : gNorm 0.6893 : L.r. 3.0000e-04
+[2025-04-03 14:41:18] Ep. 1 : Up. 19000 : Sen. 12,812,208 : Cost 0.65576470 : Time 421.62s : 38767.49 words/s : gNorm 0.6963 : L.r. 3.0000e-04
+[2025-04-03 14:48:23] Ep. 1 : Up. 20000 : Sen. 13,496,479 : Cost 0.62701160 : Time 425.38s : 38758.31 words/s : gNorm 0.6412 : L.r. 3.0000e-04
+[2025-04-03 14:48:23] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 14:48:24] Saving Adam parameters
+[2025-04-03 14:48:25] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 14:49:32] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 14:49:32] [valid] Ep. 1 : Up. 20000 : perplexity : 2.47017 : new best
+[2025-04-03 14:56:12] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 14:56:12] [valid] Ep. 1 : Up. 20000 : chrf : 72.9779 : new best
+[2025-04-03 14:57:18] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 14:57:18] [valid] Ep. 1 : Up. 20000 : ce-mean-words : 0.904286 : new best
+[2025-04-03 15:04:39] Ep. 1 : Up. 21000 : Sen. 14,165,601 : Cost 0.60309035 : Time 975.51s : 16913.27 words/s : gNorm 0.5961 : L.r. 3.0000e-04
+[2025-04-03 15:11:45] Ep. 1 : Up. 22000 : Sen. 14,841,302 : Cost 0.58854157 : Time 426.03s : 38284.08 words/s : gNorm 0.5908 : L.r. 3.0000e-04
+[2025-04-03 15:18:54] Ep. 1 : Up. 23000 : Sen. 15,511,911 : Cost 0.56875688 : Time 429.57s : 38422.68 words/s : gNorm 0.5702 : L.r. 3.0000e-04
+[2025-04-03 15:26:03] Ep. 1 : Up. 24000 : Sen. 16,181,134 : Cost 0.55486345 : Time 428.69s : 38307.55 words/s : gNorm 0.5489 : L.r. 3.0000e-04
+[2025-04-03 15:33:09] Ep. 1 : Up. 25000 : Sen. 16,856,366 : Cost 0.54420519 : Time 426.17s : 38396.31 words/s : gNorm 0.5847 : L.r. 3.0000e-04
+[2025-04-03 15:33:09] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 15:33:10] Saving Adam parameters
+[2025-04-03 15:33:11] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 15:34:18] [valid] Ep. 1 : Up. 25000 : perplexity : 2.48375 : stalled 1 times (last best: 2.47017)
+[2025-04-03 15:40:59] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 15:41:00] [valid] Ep. 1 : Up. 25000 : chrf : 73.6486 : new best
+[2025-04-03 15:42:05] [valid] Ep. 1 : Up. 25000 : ce-mean-words : 0.909771 : stalled 1 times (last best: 0.904286)
+[2025-04-03 15:49:08] Ep. 1 : Up. 26000 : Sen. 17,515,926 : Cost 0.53323859 : Time 959.30s : 17065.52 words/s : gNorm 0.5439 : L.r. 3.0000e-04
+[2025-04-03 15:56:13] Ep. 1 : Up. 27000 : Sen. 18,187,149 : Cost 0.51674223 : Time 424.62s : 38799.57 words/s : gNorm 0.5031 : L.r. 3.0000e-04
+[2025-04-03 16:03:14] Ep. 1 : Up. 28000 : Sen. 18,871,847 : Cost 0.51172632 : Time 420.61s : 38928.16 words/s : gNorm 0.5235 : L.r. 3.0000e-04
+[2025-04-03 16:10:18] Ep. 1 : Up. 29000 : Sen. 19,552,443 : Cost 0.49978185 : Time 423.92s : 38777.33 words/s : gNorm 0.5106 : L.r. 3.0000e-04
+[2025-04-03 16:13:57] Seen 19,896,896 samples
+[2025-04-03 16:13:57] Starting data epoch 2 in logical epoch 2
+[2025-04-03 16:13:57] [data] Shuffling data
+[2025-04-03 16:13:58] [data] Done shuffling 19,897,021 sentences (cached in RAM)
+[2025-04-03 16:17:49] Ep. 2 : Up. 30000 : Sen. 330,691 : Cost 0.49288169 : Time 451.76s : 35947.37 words/s : gNorm 0.5222 : L.r. 3.0000e-04
+[2025-04-03 16:17:50] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 16:17:50] Saving Adam parameters
+[2025-04-03 16:17:51] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 16:18:59] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 16:19:00] [valid] Ep. 2 : Up. 30000 : perplexity : 2.32469 : new best
+[2025-04-03 16:25:38] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 16:25:39] [valid] Ep. 2 : Up. 30000 : chrf : 74.138 : new best
+[2025-04-03 16:26:45] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 16:26:45] [valid] Ep. 2 : Up. 30000 : ce-mean-words : 0.843586 : new best
+[2025-04-03 16:33:49] Ep. 2 : Up. 31000 : Sen. 995,908 : Cost 0.47536078 : Time 959.64s : 17159.39 words/s : gNorm 0.4935 : L.r. 3.0000e-04
+[2025-04-03 16:40:55] Ep. 2 : Up. 32000 : Sen. 1,674,595 : Cost 0.47325623 : Time 425.63s : 38453.35 words/s : gNorm 0.5257 : L.r. 3.0000e-04
+[2025-04-03 16:48:01] Ep. 2 : Up. 33000 : Sen. 2,350,048 : Cost 0.46333078 : Time 426.43s : 38867.01 words/s : gNorm 0.4893 : L.r. 2.9542e-04
+[2025-04-03 16:55:02] Ep. 2 : Up. 34000 : Sen. 3,020,072 : Cost 0.45909369 : Time 420.86s : 38826.62 words/s : gNorm 0.4868 : L.r. 2.9104e-04
+[2025-04-03 17:02:06] Ep. 2 : Up. 35000 : Sen. 3,678,786 : Cost 0.45276257 : Time 423.47s : 38720.65 words/s : gNorm 0.4698 : L.r. 2.8685e-04
+[2025-04-03 17:02:06] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 17:02:07] Saving Adam parameters
+[2025-04-03 17:02:07] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 17:03:14] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 17:03:15] [valid] Ep. 2 : Up. 35000 : perplexity : 2.31667 : new best
+[2025-04-03 17:09:57] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 17:09:58] [valid] Ep. 2 : Up. 35000 : chrf : 74.4241 : new best
+[2025-04-03 17:11:03] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 17:11:04] [valid] Ep. 2 : Up. 35000 : ce-mean-words : 0.840129 : new best
+[2025-04-03 17:18:03] Ep. 2 : Up. 36000 : Sen. 4,379,581 : Cost 0.44823274 : Time 957.61s : 17054.14 words/s : gNorm 0.4715 : L.r. 2.8284e-04
+[2025-04-03 17:25:23] Ep. 2 : Up. 37000 : Sen. 5,043,297 : Cost 0.43882218 : Time 439.69s : 37666.29 words/s : gNorm 0.4661 : L.r. 2.7899e-04
+[2025-04-03 17:32:23] Ep. 2 : Up. 38000 : Sen. 5,718,341 : Cost 0.43566447 : Time 420.26s : 38858.46 words/s : gNorm 0.4842 : L.r. 2.7530e-04
+[2025-04-03 17:39:28] Ep. 2 : Up. 39000 : Sen. 6,385,253 : Cost 0.42956454 : Time 425.31s : 38755.89 words/s : gNorm 0.4479 : L.r. 2.7175e-04
+[2025-04-03 17:46:32] Ep. 2 : Up. 40000 : Sen. 7,058,605 : Cost 0.42486003 : Time 423.60s : 38668.10 words/s : gNorm 0.4524 : L.r. 2.6833e-04
+[2025-04-03 17:46:32] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 17:46:33] Saving Adam parameters
+[2025-04-03 17:46:34] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 17:47:42] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 17:47:43] [valid] Ep. 2 : Up. 40000 : perplexity : 2.22596 : new best
+[2025-04-03 17:54:18] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 17:54:19] [valid] Ep. 2 : Up. 40000 : chrf : 74.5836 : new best
+[2025-04-03 17:55:24] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 17:55:24] [valid] Ep. 2 : Up. 40000 : ce-mean-words : 0.800189 : new best
+[2025-04-03 18:02:33] Ep. 2 : Up. 41000 : Sen. 7,732,816 : Cost 0.41821319 : Time 961.32s : 17159.56 words/s : gNorm 0.4417 : L.r. 2.6504e-04
+[2025-04-03 18:09:39] Ep. 2 : Up. 42000 : Sen. 8,430,550 : Cost 0.41565123 : Time 426.01s : 38656.67 words/s : gNorm 0.4607 : L.r. 2.6186e-04
+[2025-04-03 18:16:46] Ep. 2 : Up. 43000 : Sen. 9,090,048 : Cost 0.41107607 : Time 426.73s : 38237.84 words/s : gNorm 0.4686 : L.r. 2.5880e-04
+[2025-04-03 18:23:55] Ep. 2 : Up. 44000 : Sen. 9,763,788 : Cost 0.40706071 : Time 429.30s : 38442.52 words/s : gNorm 0.4500 : L.r. 2.5584e-04
+[2025-04-03 18:31:09] Ep. 2 : Up. 45000 : Sen. 10,439,618 : Cost 0.40348759 : Time 433.92s : 37645.32 words/s : gNorm 0.4432 : L.r. 2.5298e-04
+[2025-04-03 18:31:09] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 18:31:10] Saving Adam parameters
+[2025-04-03 18:31:11] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 18:32:19] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 18:32:19] [valid] Ep. 2 : Up. 45000 : perplexity : 2.22314 : new best
+[2025-04-03 18:39:04] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 18:39:04] [valid] Ep. 2 : Up. 45000 : chrf : 75.3767 : new best
+[2025-04-03 18:40:10] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 18:40:10] [valid] Ep. 2 : Up. 45000 : ce-mean-words : 0.798919 : new best
+[2025-04-03 18:47:26] Ep. 2 : Up. 46000 : Sen. 11,115,211 : Cost 0.39910018 : Time 977.05s : 16868.33 words/s : gNorm 0.4393 : L.r. 2.5022e-04
+[2025-04-03 18:54:30] Ep. 2 : Up. 47000 : Sen. 11,788,933 : Cost 0.39649436 : Time 423.63s : 38770.49 words/s : gNorm 0.4495 : L.r. 2.4754e-04
+[2025-04-03 19:01:35] Ep. 2 : Up. 48000 : Sen. 12,453,165 : Cost 0.39138469 : Time 425.02s : 38585.75 words/s : gNorm 0.4369 : L.r. 2.4495e-04
+[2025-04-03 19:08:39] Ep. 2 : Up. 49000 : Sen. 13,131,531 : Cost 0.38758701 : Time 423.40s : 38838.34 words/s : gNorm 0.4188 : L.r. 2.4244e-04
+[2025-04-03 19:15:42] Ep. 2 : Up. 50000 : Sen. 13,805,594 : Cost 0.38582832 : Time 423.01s : 38720.54 words/s : gNorm 0.4385 : L.r. 2.4000e-04
+[2025-04-03 19:15:42] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 19:15:42] Saving Adam parameters
+[2025-04-03 19:15:43] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 19:16:50] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 19:16:51] [valid] Ep. 2 : Up. 50000 : perplexity : 2.17297 : new best
+[2025-04-03 19:23:23] [valid] Ep. 2 : Up. 50000 : chrf : 75.0432 : stalled 1 times (last best: 75.3767)
+[2025-04-03 19:24:29] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 19:24:29] [valid] Ep. 2 : Up. 50000 : ce-mean-words : 0.776093 : new best
+[2025-04-03 19:31:31] Ep. 2 : Up. 51000 : Sen. 14,464,143 : Cost 0.38425416 : Time 949.93s : 17135.57 words/s : gNorm 0.4228 : L.r. 2.3764e-04
+[2025-04-03 19:38:35] Ep. 2 : Up. 52000 : Sen. 15,157,669 : Cost 0.37831125 : Time 423.70s : 38938.34 words/s : gNorm 0.4257 : L.r. 2.3534e-04
+[2025-04-03 19:45:39] Ep. 2 : Up. 53000 : Sen. 15,824,963 : Cost 0.37856096 : Time 423.25s : 38671.28 words/s : gNorm 0.4252 : L.r. 2.3311e-04
+[2025-04-03 19:52:40] Ep. 2 : Up. 54000 : Sen. 16,510,982 : Cost 0.37127876 : Time 421.48s : 39069.79 words/s : gNorm 0.4051 : L.r. 2.3094e-04
+[2025-04-03 19:59:45] Ep. 2 : Up. 55000 : Sen. 17,178,007 : Cost 0.37212360 : Time 425.25s : 38705.47 words/s : gNorm 0.4331 : L.r. 2.2883e-04
+[2025-04-03 19:59:45] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 19:59:46] Saving Adam parameters
+[2025-04-03 19:59:47] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 20:00:54] [valid] Ep. 2 : Up. 55000 : perplexity : 2.18957 : stalled 1 times (last best: 2.17297)
+[2025-04-03 20:07:32] [valid] Ep. 2 : Up. 55000 : chrf : 75.0592 : stalled 2 times (last best: 75.3767)
+[2025-04-03 20:08:37] [valid] Ep. 2 : Up. 55000 : ce-mean-words : 0.783704 : stalled 1 times (last best: 0.776093)
+[2025-04-03 20:15:41] Ep. 2 : Up. 56000 : Sen. 17,848,794 : Cost 0.36753929 : Time 955.91s : 17087.12 words/s : gNorm 0.4172 : L.r. 2.2678e-04
+[2025-04-03 20:22:52] Ep. 2 : Up. 57000 : Sen. 18,519,788 : Cost 0.36848119 : Time 430.77s : 38220.81 words/s : gNorm 0.4374 : L.r. 2.2478e-04
+[2025-04-03 20:29:56] Ep. 2 : Up. 58000 : Sen. 19,197,371 : Cost 0.36417097 : Time 423.77s : 38406.75 words/s : gNorm 0.4367 : L.r. 2.2283e-04
+[2025-04-03 20:37:04] Ep. 2 : Up. 59000 : Sen. 19,864,664 : Cost 0.36179444 : Time 428.04s : 38354.44 words/s : gNorm 0.4099 : L.r. 2.2094e-04
+[2025-04-03 20:37:24] Seen 19,896,896 samples
+[2025-04-03 20:37:24] Starting data epoch 3 in logical epoch 3
+[2025-04-03 20:37:24] [data] Shuffling data
+[2025-04-03 20:37:25] [data] Done shuffling 19,897,021 sentences (cached in RAM)
+[2025-04-03 20:44:30] Ep. 3 : Up. 60000 : Sen. 650,361 : Cost 0.34269413 : Time 446.38s : 36942.13 words/s : gNorm 0.4085 : L.r. 2.1909e-04
+[2025-04-03 20:44:30] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 20:44:31] Saving Adam parameters
+[2025-04-03 20:44:32] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 20:45:39] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 20:45:40] [valid] Ep. 3 : Up. 60000 : perplexity : 2.11427 : new best
+[2025-04-03 20:52:17] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 20:52:18] [valid] Ep. 3 : Up. 60000 : chrf : 75.4109 : new best
+[2025-04-03 20:53:22] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 20:53:23] [valid] Ep. 3 : Up. 60000 : ce-mean-words : 0.748707 : new best
+[2025-04-03 21:00:30] Ep. 3 : Up. 61000 : Sen. 1,312,384 : Cost 0.33951503 : Time 959.49s : 17131.15 words/s : gNorm 0.4174 : L.r. 2.1729e-04
+[2025-04-03 21:07:36] Ep. 3 : Up. 62000 : Sen. 1,988,451 : Cost 0.34443352 : Time 425.82s : 38379.48 words/s : gNorm 0.4152 : L.r. 2.1553e-04
+[2025-04-03 21:14:42] Ep. 3 : Up. 63000 : Sen. 2,668,007 : Cost 0.34158388 : Time 425.89s : 38298.78 words/s : gNorm 0.4180 : L.r. 2.1381e-04
+[2025-04-03 21:22:03] Ep. 3 : Up. 64000 : Sen. 3,348,299 : Cost 0.33855441 : Time 441.29s : 37389.94 words/s : gNorm 0.4346 : L.r. 2.1213e-04
+[2025-04-03 21:29:17] Ep. 3 : Up. 65000 : Sen. 4,011,815 : Cost 0.33727470 : Time 433.81s : 37802.73 words/s : gNorm 0.4056 : L.r. 2.1049e-04
+[2025-04-03 21:29:17] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 21:29:20] Saving Adam parameters
+[2025-04-03 21:29:22] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 21:30:29] [valid] Ep. 3 : Up. 65000 : perplexity : 2.15348 : stalled 1 times (last best: 2.11427)
+[2025-04-03 21:37:07] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 21:37:07] [valid] Ep. 3 : Up. 65000 : chrf : 75.85 : new best
+[2025-04-03 21:38:13] [valid] Ep. 3 : Up. 65000 : ce-mean-words : 0.767085 : stalled 1 times (last best: 0.748707)
+[2025-04-03 21:45:16] Ep. 3 : Up. 66000 : Sen. 4,701,577 : Cost 0.33744535 : Time 959.19s : 17191.90 words/s : gNorm 0.4064 : L.r. 2.0889e-04
+[2025-04-03 21:52:31] Ep. 3 : Up. 67000 : Sen. 5,357,501 : Cost 0.33567360 : Time 435.55s : 37406.13 words/s : gNorm 0.4190 : L.r. 2.0733e-04
+[2025-04-03 21:59:37] Ep. 3 : Up. 68000 : Sen. 6,037,330 : Cost 0.33552888 : Time 425.55s : 38732.87 words/s : gNorm 0.4102 : L.r. 2.0580e-04
+[2025-04-03 22:06:40] Ep. 3 : Up. 69000 : Sen. 6,695,325 : Cost 0.33412299 : Time 423.24s : 38577.83 words/s : gNorm 0.3938 : L.r. 2.0430e-04
+[2025-04-03 22:13:41] Ep. 3 : Up. 70000 : Sen. 7,379,630 : Cost 0.33104008 : Time 420.76s : 38974.02 words/s : gNorm 0.4109 : L.r. 2.0284e-04
+[2025-04-03 22:13:41] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 22:13:42] Saving Adam parameters
+[2025-04-03 22:13:43] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 22:14:50] [valid] Ep. 3 : Up. 70000 : perplexity : 2.12615 : stalled 2 times (last best: 2.11427)
+[2025-04-03 22:21:29] [valid] Ep. 3 : Up. 70000 : chrf : 75.7578 : stalled 1 times (last best: 75.85)
+[2025-04-03 22:22:35] [valid] Ep. 3 : Up. 70000 : ce-mean-words : 0.754314 : stalled 2 times (last best: 0.748707)
+[2025-04-03 22:29:38] Ep. 3 : Up. 71000 : Sen. 8,058,169 : Cost 0.33239809 : Time 957.43s : 17202.06 words/s : gNorm 0.4036 : L.r. 2.0140e-04
+[2025-04-03 22:36:38] Ep. 3 : Up. 72000 : Sen. 8,755,941 : Cost 0.33122084 : Time 419.31s : 39084.00 words/s : gNorm 0.3866 : L.r. 2.0000e-04
+[2025-04-03 22:43:46] Ep. 3 : Up. 73000 : Sen. 9,415,113 : Cost 0.32800838 : Time 427.99s : 38610.74 words/s : gNorm 0.3949 : L.r. 1.9863e-04
+[2025-04-03 22:50:49] Ep. 3 : Up. 74000 : Sen. 10,081,345 : Cost 0.32744408 : Time 423.63s : 38707.54 words/s : gNorm 0.3986 : L.r. 1.9728e-04
+[2025-04-03 22:57:54] Ep. 3 : Up. 75000 : Sen. 10,757,094 : Cost 0.32722670 : Time 424.46s : 38773.26 words/s : gNorm 0.3912 : L.r. 1.9596e-04
+[2025-04-03 22:57:54] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 22:57:55] Saving Adam parameters
+[2025-04-03 22:57:56] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 22:59:03] [valid] Ep. 3 : Up. 75000 : perplexity : 2.15221 : stalled 3 times (last best: 2.11427)
+[2025-04-03 23:05:47] [valid] Ep. 3 : Up. 75000 : chrf : 75.6939 : stalled 2 times (last best: 75.85)
+[2025-04-03 23:06:52] [valid] Ep. 3 : Up. 75000 : ce-mean-words : 0.766495 : stalled 3 times (last best: 0.748707)
+[2025-04-03 23:13:56] Ep. 3 : Up. 76000 : Sen. 11,420,839 : Cost 0.32452783 : Time 961.95s : 17076.17 words/s : gNorm 0.3905 : L.r. 1.9467e-04
+[2025-04-03 23:21:08] Ep. 3 : Up. 77000 : Sen. 12,102,793 : Cost 0.32464528 : Time 431.81s : 38014.12 words/s : gNorm 0.3872 : L.r. 1.9340e-04
+[2025-04-03 23:28:16] Ep. 3 : Up. 78000 : Sen. 12,785,618 : Cost 0.32094792 : Time 428.13s : 38578.52 words/s : gNorm 0.3760 : L.r. 1.9215e-04
+[2025-04-03 23:35:21] Ep. 3 : Up. 79000 : Sen. 13,450,381 : Cost 0.32360759 : Time 425.73s : 38331.03 words/s : gNorm 0.3860 : L.r. 1.9093e-04
+[2025-04-03 23:42:28] Ep. 3 : Up. 80000 : Sen. 14,123,381 : Cost 0.31994861 : Time 426.49s : 38542.43 words/s : gNorm 0.3772 : L.r. 1.8974e-04
+[2025-04-03 23:42:28] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-03 23:42:29] Saving Adam parameters
+[2025-04-03 23:42:30] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-03 23:43:36] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-perplexity.npz
+[2025-04-03 23:43:37] [valid] Ep. 3 : Up. 80000 : perplexity : 2.08398 : new best
+[2025-04-03 23:50:22] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-03 23:50:22] [valid] Ep. 3 : Up. 80000 : chrf : 75.9159 : new best
+[2025-04-03 23:51:27] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-ce-mean-words.npz
+[2025-04-03 23:51:28] [valid] Ep. 3 : Up. 80000 : ce-mean-words : 0.734278 : new best
+[2025-04-03 23:58:35] Ep. 3 : Up. 81000 : Sen. 14,800,396 : Cost 0.32111308 : Time 966.97s : 16966.26 words/s : gNorm 0.3953 : L.r. 1.8856e-04
+[2025-04-04 00:05:43] Ep. 3 : Up. 82000 : Sen. 15,472,391 : Cost 0.31726921 : Time 427.97s : 38516.09 words/s : gNorm 0.3883 : L.r. 1.8741e-04
+[2025-04-04 00:12:49] Ep. 3 : Up. 83000 : Sen. 16,163,586 : Cost 0.32007712 : Time 426.29s : 38483.12 words/s : gNorm 0.4073 : L.r. 1.8628e-04
+[2025-04-04 00:19:57] Ep. 3 : Up. 84000 : Sen. 16,821,749 : Cost 0.31422240 : Time 428.26s : 38438.73 words/s : gNorm 0.3831 : L.r. 1.8516e-04
+[2025-04-04 00:27:05] Ep. 3 : Up. 85000 : Sen. 17,511,692 : Cost 0.31353566 : Time 427.92s : 38559.82 words/s : gNorm 0.3949 : L.r. 1.8407e-04
+[2025-04-04 00:27:05] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-04 00:27:06] Saving Adam parameters
+[2025-04-04 00:27:07] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-04 00:28:14] [valid] Ep. 3 : Up. 85000 : perplexity : 2.10984 : stalled 1 times (last best: 2.08398)
+[2025-04-04 00:34:57] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-04 00:34:58] [valid] Ep. 3 : Up. 85000 : chrf : 75.934 : new best
+[2025-04-04 00:36:03] [valid] Ep. 3 : Up. 85000 : ce-mean-words : 0.746612 : stalled 1 times (last best: 0.734278)
+[2025-04-04 00:43:08] Ep. 3 : Up. 86000 : Sen. 18,183,207 : Cost 0.31865937 : Time 962.73s : 16938.92 words/s : gNorm 0.4056 : L.r. 1.8300e-04
+[2025-04-04 00:50:15] Ep. 3 : Up. 87000 : Sen. 18,850,329 : Cost 0.31319836 : Time 426.73s : 38367.71 words/s : gNorm 0.3940 : L.r. 1.8194e-04
+[2025-04-04 00:57:26] Ep. 3 : Up. 88000 : Sen. 19,521,200 : Cost 0.31151381 : Time 430.81s : 38408.05 words/s : gNorm 0.3977 : L.r. 1.8091e-04
+[2025-04-04 01:01:20] Seen 19,896,896 samples
+[2025-04-04 01:01:20] Starting data epoch 4 in logical epoch 4
+[2025-04-04 01:01:20] [data] Shuffling data
+[2025-04-04 01:01:21] [data] Done shuffling 19,897,021 sentences (cached in RAM)
+[2025-04-04 01:04:57] Ep. 4 : Up. 89000 : Sen. 312,045 : Cost 0.30426970 : Time 451.19s : 36139.83 words/s : gNorm 0.4024 : L.r. 1.7989e-04
+[2025-04-04 01:12:03] Ep. 4 : Up. 90000 : Sen. 971,529 : Cost 0.29137042 : Time 426.47s : 38690.49 words/s : gNorm 0.3680 : L.r. 1.7889e-04
+[2025-04-04 01:12:03] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-04 01:12:04] Saving Adam parameters
+[2025-04-04 01:12:05] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-04 01:13:12] [valid] Ep. 4 : Up. 90000 : perplexity : 2.1576 : stalled 2 times (last best: 2.08398)
+[2025-04-04 01:19:46] [valid] Ep. 4 : Up. 90000 : chrf : 75.9152 : stalled 1 times (last best: 75.934)
+[2025-04-04 01:20:51] [valid] Ep. 4 : Up. 90000 : ce-mean-words : 0.768995 : stalled 2 times (last best: 0.734278)
+[2025-04-04 01:28:02] Ep. 4 : Up. 91000 : Sen. 1,650,463 : Cost 0.29518175 : Time 958.92s : 17072.32 words/s : gNorm 0.4024 : L.r. 1.7790e-04
+[2025-04-04 01:35:14] Ep. 4 : Up. 92000 : Sen. 2,317,541 : Cost 0.29224843 : Time 431.64s : 38283.66 words/s : gNorm 0.3830 : L.r. 1.7693e-04
+[2025-04-04 01:42:16] Ep. 4 : Up. 93000 : Sen. 2,998,784 : Cost 0.29608375 : Time 422.56s : 38715.97 words/s : gNorm 0.3786 : L.r. 1.7598e-04
+[2025-04-04 01:49:21] Ep. 4 : Up. 94000 : Sen. 3,683,901 : Cost 0.29357138 : Time 424.38s : 38877.34 words/s : gNorm 0.3746 : L.r. 1.7504e-04
+[2025-04-04 01:56:24] Ep. 4 : Up. 95000 : Sen. 4,344,193 : Cost 0.29417062 : Time 423.46s : 38800.60 words/s : gNorm 0.3852 : L.r. 1.7411e-04
+[2025-04-04 01:56:24] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-04 01:56:25] Saving Adam parameters
+[2025-04-04 01:56:26] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-04 01:57:33] [valid] Ep. 4 : Up. 95000 : perplexity : 2.11026 : stalled 3 times (last best: 2.08398)
+[2025-04-04 02:04:08] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-04 02:04:08] [valid] Ep. 4 : Up. 95000 : chrf : 76.0387 : new best
+[2025-04-04 02:05:13] [valid] Ep. 4 : Up. 95000 : ce-mean-words : 0.746812 : stalled 3 times (last best: 0.734278)
+[2025-04-04 02:12:19] Ep. 4 : Up. 96000 : Sen. 5,026,655 : Cost 0.29430148 : Time 954.95s : 17159.27 words/s : gNorm 0.3806 : L.r. 1.7321e-04
+[2025-04-04 02:19:27] Ep. 4 : Up. 97000 : Sen. 5,701,735 : Cost 0.29161742 : Time 427.39s : 38574.32 words/s : gNorm 0.3732 : L.r. 1.7231e-04
+[2025-04-04 02:26:33] Ep. 4 : Up. 98000 : Sen. 6,371,167 : Cost 0.29527372 : Time 426.29s : 38327.76 words/s : gNorm 0.3853 : L.r. 1.7143e-04
+[2025-04-04 02:33:39] Ep. 4 : Up. 99000 : Sen. 7,032,722 : Cost 0.29355940 : Time 426.00s : 38309.14 words/s : gNorm 0.4061 : L.r. 1.7056e-04
+[2025-04-04 02:40:46] Ep. 4 : Up. 100000 : Sen. 7,703,264 : Cost 0.29248372 : Time 427.17s : 38413.37 words/s : gNorm 0.3846 : L.r. 1.6971e-04
+[2025-04-04 02:40:46] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-04 02:40:47] Saving Adam parameters
+[2025-04-04 02:40:48] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-04 02:41:55] [valid] Ep. 4 : Up. 100000 : perplexity : 2.0882 : stalled 4 times (last best: 2.08398)
+[2025-04-04 02:48:28] [valid] Ep. 4 : Up. 100000 : chrf : 75.7391 : stalled 1 times (last best: 76.0387)
+[2025-04-04 02:49:33] [valid] Ep. 4 : Up. 100000 : ce-mean-words : 0.736301 : stalled 4 times (last best: 0.734278)
+[2025-04-04 02:56:41] Ep. 4 : Up. 101000 : Sen. 8,392,099 : Cost 0.29298732 : Time 954.96s : 17292.80 words/s : gNorm 0.4071 : L.r. 1.6886e-04
+[2025-04-04 03:03:51] Ep. 4 : Up. 102000 : Sen. 9,067,100 : Cost 0.29154560 : Time 430.02s : 38098.49 words/s : gNorm 0.3833 : L.r. 1.6803e-04
+[2025-04-04 03:11:01] Ep. 4 : Up. 103000 : Sen. 9,741,882 : Cost 0.28991076 : Time 429.66s : 38438.65 words/s : gNorm 0.3818 : L.r. 1.6722e-04
+[2025-04-04 03:18:20] Ep. 4 : Up. 104000 : Sen. 10,396,054 : Cost 0.29175815 : Time 438.78s : 37144.75 words/s : gNorm 0.3920 : L.r. 1.6641e-04
+[2025-04-04 03:25:34] Ep. 4 : Up. 105000 : Sen. 11,088,017 : Cost 0.29247987 : Time 434.53s : 37651.73 words/s : gNorm 0.4128 : L.r. 1.6562e-04
+[2025-04-04 03:25:34] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-04 03:25:35] Saving Adam parameters
+[2025-04-04 03:25:36] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
+[2025-04-04 03:26:42] [valid] Ep. 4 : Up. 105000 : perplexity : 2.13023 : stalled 5 times (last best: 2.08398)
+[2025-04-04 03:33:19] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.best-chrf.npz
+[2025-04-04 03:33:19] [valid] Ep. 4 : Up. 105000 : chrf : 76.2215 : new best
+[2025-04-04 03:34:25] [valid] Ep. 4 : Up. 105000 : ce-mean-words : 0.75623 : stalled 5 times (last best: 0.734278)
+[2025-04-04 03:34:25] Training finished
+[2025-04-04 03:34:25] Saving model weights and runtime parameters to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz
+[2025-04-04 03:34:26] Saving Adam parameters
+[2025-04-04 03:34:26] [training] Saving training checkpoint to /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz and /scratch/project_2011987/OpusDistillery/rules/../data/models/MA-test/cat+oci+spa-eng/model5_student/model.npz.optimizer.npz
