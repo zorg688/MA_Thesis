@@ -39,3 +39,10 @@ Model scores for MT data 4_Spanglish:
 	Model7: 52.0
 	Model8: 52.6
 	Model9: 42.6
+
+
+
+Unfortunately, as of 01.10.2025 the website is not available anymore, which makes a reproduction of the experiments not possible anymore. Unfortunately, the gold sentences for the dataset have also not been able to be shared with me. 
+
+
+- limitations: different datasets, student models with less languages than teachers, experiment of using MT data as gold sentences uses a model that is also not trained for code-mixing which might lead to similar mistakes to the teacher models which naturally increases the score, comparison of teacher and student models wonky due to use of slightly different training data, training gpus should be the same number
